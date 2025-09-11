@@ -287,4 +287,13 @@
         }
     </style>
 
-.game-thumb{width:56px;height:56px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;margin:0 0 10px 0;font-size:28px;background:#141836;border:1px solid #2c3354}
+    /* Add-ons: thumbnails / motion / hovers */
+    body{opacity:0;transition:opacity .3s ease;}
+    body.loaded{opacity:1;}
+    .game-thumb{width:56px;height:56px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;margin:0 0 10px 0;font-size:28px;background:#141836;border:1px solid #2c3354}
+    .game-card{transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;}
+    .game-card:hover{transform:translateY(-6px)}
+    .play-button-secondary{transition:transform .2s ease, box-shadow .2s ease;}
+    .play-button-secondary:hover{transform:translateY(-2px)}
+    @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+
