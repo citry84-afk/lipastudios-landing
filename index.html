@@ -285,6 +285,14 @@
             .game-stats { gap: 20px; }
             .stat-number { font-size: 1.5rem; }
         }
+
+        /* Enhancements: thumbs / motion / hovers */
+        .game-thumb{width:56px;height:56px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;margin:0 0 10px 0;font-size:28px;background:#141836;border:1px solid #2c3354}
+        .game-card{transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;}
+        .game-card:hover{transform:translateY(-6px)}
+        .play-button-secondary{transition:transform .2s ease, box-shadow .2s ease;}
+        .play-button-secondary:hover{transform:translateY(-2px)}
+        @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
     </style>
 </head>
 <body>
@@ -340,6 +348,7 @@
         
         <div class="games-grid">
             <div class="game-card">
+                <span class="game-thumb">🏃‍♂️</span>
                 <h3>Neon Runner</h3>
                 <div class="game-description">
                     Cyberpunk highway infinito. La velocidad aumenta hasta que tus reflejos no pueden seguir el ritmo.
@@ -348,6 +357,7 @@
             </div>
             
             <div class="game-card">
+                <span class="game-thumb">🎵</span>
                 <h3>Neon Beat Stage</h3>
                 <div class="game-description">
                     K-pop rhythm game. Sube el volumen y déjate llevar por el neón. ¿Puedes seguir el ritmo?
@@ -356,6 +366,7 @@
             </div>
             
             <div class="game-card">
+                <span class="game-thumb">🧪</span>
                 <h3>Neon Lab</h3>
                 <div class="game-description">
                     Physics puzzle que hace pensar tu cerebro. Cada nivel es más imposible que el anterior.
@@ -380,10 +391,10 @@
     
     <footer class="footer">
         <div class="footer-text">
-            © 2025 LIPA Studios. Construyendo sueños digitales para Inés, Paula y Ángel.
+            © 2025 LIPA Studios - Professional HTML5 Game Development
         </div>
         <div class="footer-text" style="font-size: 0.8rem; color: #555;">
-            Objetivo: €10,000/mes navegando las Islas Baleares en familia
+            Contact: info@lipastudios.com | Follow us on social media
         </div>
     </footer>
     
