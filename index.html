@@ -304,6 +304,7 @@
         <script>
              (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
+        <div class="ad-fallback" aria-hidden="true" style="display:none;align-items:center;justify-content:center;height:90px;border:1px dashed #2c3354;border-radius:10px;color:#a9afc7;">Advertisement</div>
     </div>
     
     <!-- Hero Game - Stack Tower -->
@@ -340,7 +341,7 @@
         
         <div class="games-grid">
             <div class="game-card">
-                <h3>Neon Runner</h3>
+                <h3>🏃‍♂️ Neon Runner</h3>
                 <div class="game-description">
                     Cyberpunk highway infinito. La velocidad aumenta hasta que tus reflejos no pueden seguir el ritmo.
                 </div>
@@ -348,7 +349,7 @@
             </div>
             
             <div class="game-card">
-                <h3>Neon Beat Stage</h3>
+                <h3>🎵 Neon Beat Stage</h3>
                 <div class="game-description">
                     K-pop rhythm game. Sube el volumen y déjate llevar por el neón. ¿Puedes seguir el ritmo?
                 </div>
@@ -356,7 +357,7 @@
             </div>
             
             <div class="game-card">
-                <h3>Neon Lab</h3>
+                <h3>🧪 Neon Lab</h3>
                 <div class="game-description">
                     Physics puzzle que hace pensar tu cerebro. Cada nivel es más imposible que el anterior.
                 </div>
@@ -376,14 +377,15 @@
         <script>
              (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
+        <div class="ad-fallback" aria-hidden="true" style="display:none;align-items:center;justify-content:center;height:250px;border:1px dashed #2c3354;border-radius:10px;color:#a9afc7;">Advertisement</div>
     </div>
     
     <footer class="footer">
         <div class="footer-text">
-            © 2025 LIPA Studios. Construyendo sueños digitales para Inés, Paula y Ángel.
+            © 2025 LIPA Studios — Professional HTML5 Game Development
         </div>
         <div class="footer-text" style="font-size: 0.8rem; color: #555;">
-            Objetivo: €10,000/mes navegando las Islas Baleares en familia
+            Contact: contact@lipastudios.com · Follow us on social media
         </div>
     </footer>
     
@@ -409,9 +411,11 @@
             }, 30000);
         }
         
+        function ensureAdsVisible(){try{document.querySelectorAll('.ad-banner-top, .ad-banner-bottom').forEach(c=>{const ins=c.querySelector('ins.adsbygoogle');const fb=c.querySelector('.ad-fallback');if(ins && fb){const h=ins.offsetHeight||0;const w=ins.offsetWidth||0;if(h<40 || w<120){fb.style.display='flex';}}});}catch(e){}}
         window.onload = function() {
             updatePlayerCount();
             showCrossPromo();
+            setTimeout(ensureAdsVisible, 2500);
         };
     </script>
 </body>
