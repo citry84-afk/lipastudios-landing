@@ -276,6 +276,12 @@
         }
         
         /* Responsive */
+        
+        .hero-graphic{width:140px;height:140px;display:block;margin:0 auto 18px auto;filter:drop-shadow(0 0 18px rgba(0,255,255,.6));animation:stackFloat 3s ease-in-out infinite}
+        .hero-game::before{content:"";position:absolute;inset:-10px;pointer-events:none;background:radial-gradient(60% 60% at 50% 30%, rgba(0,255,255,.08), transparent 70%), radial-gradient(40% 40% at 30% 70%, rgba(255,0,255,.06), transparent 70%);animation:particlesFloat 8s ease-in-out infinite}
+        .game-thumb{transition:transform .25s ease, box-shadow .25s ease}
+        .game-card:hover .game-thumb{transform:translateY(-4px) scale(1.05);box-shadow:0 8px 22px rgba(0,255,255,.18)}
+
         @media (max-width: 768px) {
             .logo { font-size: 2rem; }
             .hero-game h2 { font-size: 1.5rem; }
@@ -317,6 +323,7 @@
     <!-- Hero Game - Stack Tower -->
     <section class="hero-game">
         <h2>Stack Tower Neon</h2>
+        <img class="hero-graphic" src="assets/thumb-stack.svg" alt="Stack Tower">
         <div class="hero-description">
             ¿Puedes llegar al nivel 50? El 94% abandona antes del 15. 
             El juego que ha arruinado más amistades que el Monopoly.
@@ -348,7 +355,7 @@
         
         <div class="games-grid">
             <div class="game-card">
-                <span class="game-thumb">🏃‍♂️</span>
+                <img class="game-thumb" src="assets/thumb-runner.svg" alt="Neon Runner" loading="lazy">
                 <h3>Neon Runner</h3>
                 <div class="game-description">
                     Cyberpunk highway infinito. La velocidad aumenta hasta que tus reflejos no pueden seguir el ritmo.
@@ -357,7 +364,7 @@
             </div>
             
             <div class="game-card">
-                <span class="game-thumb">🎵</span>
+                <img class="game-thumb" src="assets/thumb-beat.svg" alt="Neon Beat Stage" loading="lazy">
                 <h3>Neon Beat Stage</h3>
                 <div class="game-description">
                     K-pop rhythm game. Sube el volumen y déjate llevar por el neón. ¿Puedes seguir el ritmo?
@@ -366,7 +373,7 @@
             </div>
             
             <div class="game-card">
-                <span class="game-thumb">🧪</span>
+                <img class="game-thumb" src="assets/thumb-lab.svg" alt="Neon Lab" loading="lazy">
                 <h3>Neon Lab</h3>
                 <div class="game-description">
                     Physics puzzle que hace pensar tu cerebro. Cada nivel es más imposible que el anterior.
