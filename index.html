@@ -286,137 +286,14 @@
             .stat-number { font-size: 1.5rem; }
         }
     </style>
-</head>
-<body>
-    <header class="header">
-        <div class="logo">LIPA Studios</div>
-        <div class="tagline">Building Digital Dreams</div>
-    </header>
-    
-    <!-- AdSense Banner Top -->
-    <div class="ad-banner-top">
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-4129506161314540"
-             data-ad-slot="6673201053"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-        <div class="ad-fallback" aria-hidden="true" style="display:none;align-items:center;justify-content:center;height:90px;border:1px dashed #2c3354;border-radius:10px;color:#a9afc7;">Advertisement</div>
-    </div>
-    
-    <!-- Hero Game - Stack Tower -->
-    <section class="hero-game">
-        <h2>Stack Tower Neon</h2>
-        <div class="hero-description">
-            ¿Puedes llegar al nivel 50? El 94% abandona antes del 15. 
-            El juego que ha arruinado más amistades que el Monopoly.
-        </div>
-        
-        <a href="/stack" class="play-button-hero" onclick="trackGameClick('stack_tower')">
-            ¡JUEGA AHORA GRATIS!
-        </a>
-        
-        <div class="game-stats">
-            <div class="stat">
-                <div class="stat-number" id="players-count">97</div>
-                <div class="stat-label">Jugadores activos</div>
-            </div>
-            <div class="stat">
-                <div class="stat-number">80%</div>
-                <div class="stat-label">Juego favorito</div>
-            </div>
-            <div class="stat">
-                <div class="stat-number">51s</div>
-                <div class="stat-label">Tiempo promedio</div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Otros juegos -->
-    <section class="other-games">
-        <h2 class="section-title">Más juegos LIPA Studios</h2>
-        
-        <div class="games-grid">
-            <div class="game-card">
-                <h3>🏃‍♂️ Neon Runner</h3>
-                <div class="game-description">
-                    Cyberpunk highway infinito. La velocidad aumenta hasta que tus reflejos no pueden seguir el ritmo.
-                </div>
-                <a href="/runner" class="play-button-secondary" onclick="trackGameClick('neon_runner')">Jugar Ahora</a>
-            </div>
-            
-            <div class="game-card">
-                <h3>🎵 Neon Beat Stage</h3>
-                <div class="game-description">
-                    K-pop rhythm game. Sube el volumen y déjate llevar por el neón. ¿Puedes seguir el ritmo?
-                </div>
-                <a href="/beat" class="play-button-secondary" onclick="trackGameClick('neon_beat')">Jugar Ahora</a>
-            </div>
-            
-            <div class="game-card">
-                <h3>🧪 Neon Lab</h3>
-                <div class="game-description">
-                    Physics puzzle que hace pensar tu cerebro. Cada nivel es más imposible que el anterior.
-                </div>
-                <a href="/lab" class="play-button-secondary" onclick="trackGameClick('neon_lab')">Jugar Ahora</a>
-            </div>
-        </div>
-    </section>
-    
-    <!-- AdSense Banner Bottom -->
-    <div class="ad-banner-bottom">
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-4129506161314540"
-             data-ad-slot="6673201053"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-        <div class="ad-fallback" aria-hidden="true" style="display:none;align-items:center;justify-content:center;height:250px;border:1px dashed #2c3354;border-radius:10px;color:#a9afc7;">Advertisement</div>
-    </div>
-    
-    <footer class="footer">
-        <div class="footer-text">
-            © 2025 LIPA Studios — Professional HTML5 Game Development
-        </div>
-        <div class="footer-text" style="font-size: 0.8rem; color: #555;">
-            Contact: contact@lipastudios.com · Follow us on social media
-        </div>
-    </footer>
-    
-    <script>
-        // Contador dinámico de jugadores (efecto psicológico)
-        function updatePlayerCount() {
-            const counter = document.getElementById('players-count');
-            let count = 97;
-            setInterval(() => {
-                const variation = Math.floor(Math.random() * 5) - 2; // -2 a +2
-                count = Math.max(95, Math.min(105, count + variation));
-                counter.textContent = count;
-            }, 5000);
-        }
-        
-        // Cross-promotion inteligente
-        function showCrossPromo() {
-            // Después de 30 segundos, mostrar sugerencia de otros juegos
-            setTimeout(() => {
-                if (Math.random() > 0.5) {
-                    alert("💡 Si te gusta Stack Tower, ¡prueba Neon Runner!");
-                }
-            }, 30000);
-        }
-        
-        function ensureAdsVisible(){try{document.querySelectorAll('.ad-banner-top, .ad-banner-bottom').forEach(c=>{const ins=c.querySelector('ins.adsbygoogle');const fb=c.querySelector('.ad-fallback');if(ins && fb){const h=ins.offsetHeight||0;const w=ins.offsetWidth||0;if(h<40 || w<120){fb.style.display='flex';}}});}catch(e){}}
-        window.onload = function() {
-            updatePlayerCount();
-            showCrossPromo();
-            setTimeout(ensureAdsVisible, 2500);
-        };
-    </script>
-</body>
-</html>
+
+    /* Add-ons: thumbnails / motion / hovers */
+    body{opacity:0;transition:opacity .3s ease;}
+    body.loaded{opacity:1;}
+    .game-thumb{width:56px;height:56px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;margin:0 0 10px 0;font-size:28px;background:#141836;border:1px solid #2c3354}
+    .game-card{transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;}
+    .game-card:hover{transform:translateY(-6px)}
+    .play-button-secondary{transition:transform .2s ease, box-shadow .2s ease;}
+    .play-button-secondary:hover{transform:translateY(-2px)}
+    @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+
