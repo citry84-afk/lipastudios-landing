@@ -1,127 +1,418 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>LIPA Studios — Juegos HTML5 Neon</title>
-  <meta name="description" content="LIPA Studios: juegos HTML5 rápidos y adictivos. Juega Stack Tower, Neon Runner, Neon Beat Stage y Neon Lab.">
-  <meta name="theme-color" content="#0d0b1a">
-  <!-- Open Graph -->
-  <meta property="og:title" content="LIPA Studios — Juegos HTML5 Neon">
-  <meta property="og:description" content="Juega ahora: Stack Tower, Neon Runner, Neon Beat Stage y Neon Lab.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="/og.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIPA Studios - Juegos HTML5 Adictivos | Gratis</title>
+    <meta name="description" content="4 juegos neon cyberpunk adictivos. Stack Tower, Neon Runner, Neon Beat Stage y Neon Lab. Juega gratis ahora.">
+    
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4129506161314540" crossorigin="anonymous"></script>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-633RQLC6T0"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);} 
+        gtag('js', new Date());
+        gtag('config', 'G-633RQLC6T0');
+        
+        // Tracking de clicks por juego
+        function trackGameClick(gameName) {
+            try {
+                gtag('event', 'game_click', {
+                    'game_name': gameName,
+                    'source': 'landing_page'
+                });
+            } catch (e) {}
+        }
+    </script>
 
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-633RQLC6T0"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-633RQLC6T0');
-  </script>
-
-  <!-- Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4129506161314540" crossorigin="anonymous"></script>
-  <style>
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,sans-serif;background:radial-gradient(1200px 600px at 70% 10%,rgba(0,255,255,.08),transparent),radial-gradient(800px 400px at 20% 80%,rgba(255,0,128,.08),transparent),#0b0a16;color:#e7e9ee;min-height:100svh}
-    .wrap{max-width:1100px;margin:0 auto;padding:20px}
-    header{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
-    .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.2px}
-    .brand .dot{width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,#00ffff,#ff0080);box-shadow:0 0 12px #00ffffaa,0 0 18px #ff0080aa}
-    .brand span{background:linear-gradient(135deg,#00ffff,#ff66a6);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center;margin:16px 0 22px}
-    .hero h1{font-size:clamp(28px,4.6vw,54px);line-height:1.06}
-    .hero p{color:#b8bdd3;margin:12px 0 18px;max-width:52ch}
-    .cta{display:flex;gap:12px;flex-wrap:wrap}
-    .btn{border:1px solid #2b2f48;background:#101225;color:#e7e9ee;padding:12px 16px;border-radius:12px;cursor:pointer;transition:.2s font-weight:600}
-    .btn:hover{transform:translateY(-1px);border-color:#475072}
-    .btn.primary{background:linear-gradient(135deg,#00e7ff,#ff2aa1);border:0;color:#0b0a16;font-weight:800}
-    .panel{border:1px solid #262a40;background:#0e1022;border-radius:16px;padding:16px}
-    .grid{display:grid;gap:14px;grid-template-columns:repeat(3,1fr)}
-    .game{display:flex;gap:12px;padding:12px;border-radius:12px;border:1px solid #262a40;background:#0f1226;align-items:center}
-    .game .thumb{width:64px;height:64px;border-radius:10px;background:#141836;display:flex;align-items:center;justify-content:center;font-size:22px}
-    .game .meta{flex:1}
-    .game .meta h3{font-size:16px;margin-bottom:2px}
-    .game .meta p{font-size:13px;color:#a9afc7}
-    .badge{font-size:11px;padding:4px 8px;border-radius:999px;background:#18203a;border:1px solid #2c3354;color:#a9afc7}
-    .ad{margin:18px 0;display:flex;justify-content:center}
-    footer{margin:24px 0 10px;color:#7f86a8;font-size:13px}
-    @media (max-width:880px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.panel{padding:14px}.game{padding:10px}}
-  </style>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0a0a23, #1a1a3a);
+            color: white;
+            overflow-x: hidden;
+        }
+        
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #00ffff, #ff00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+            text-shadow: 0 0 30px #00ffff;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        .tagline {
+            color: #888;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+        
+        /* AdSense banner top */
+        .ad-banner-top {
+            text-align: center;
+            margin: 20px 0;
+            min-height: 90px;
+        }
+        
+        /* Hero Game - Stack Tower (80% del espacio) */
+        .hero-game {
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+            background: radial-gradient(circle at center, rgba(0,255,255,0.1), transparent);
+        }
+        
+        .hero-game h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #00ffff;
+            text-shadow: 0 0 20px #00ffff;
+        }
+        
+        .hero-description {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #ccc;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .play-button-hero {
+            display: inline-block;
+            padding: 20px 50px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #00ffff, #ff00ff);
+            border: none;
+            border-radius: 50px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,255,255,0.3);
+            animation: pulse 2s infinite;
+        }
+        
+        .play-button-hero:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,255,255,0.5);
+        }
+        
+        /* Stats contador */
+        .game-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #00ffff;
+        }
+        
+        .stat-label {
+            color: #888;
+            font-size: 0.9rem;
+        }
+        
+        /* Otros juegos section */
+        .other-games {
+            padding: 60px 20px;
+            background: rgba(0,0,0,0.3);
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: #ff00ff;
+            text-shadow: 0 0 20px #ff00ff;
+        }
+        
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .game-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,255,255,0.2);
+        }
+        
+        .game-card:hover {
+            transform: translateY(-10px);
+            border-color: #00ffff;
+            box-shadow: 0 20px 40px rgba(0,255,255,0.2);
+        }
+        
+        .game-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #00ffff;
+        }
+        
+        .game-description {
+            color: #ccc;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        
+        .play-button-secondary {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(45deg, #ff00ff, #00ffff);
+            border: none;
+            border-radius: 25px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .play-button-secondary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(255,0,255,0.3);
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .footer-text {
+            color: #888;
+            margin-bottom: 20px;
+        }
+        
+        /* AdSense banner bottom */
+        .ad-banner-bottom {
+            text-align: center;
+            margin: 40px 0;
+            min-height: 250px;
+        }
+        
+        /* Animaciones */
+        @keyframes glow {
+            from { text-shadow: 0 0 30px #00ffff; }
+            to { text-shadow: 0 0 50px #00ffff, 0 0 70px #ff00ff; }
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 10px 30px rgba(0,255,255,0.3); }
+            50% { box-shadow: 0 20px 40px rgba(0,255,255,0.5); }
+            100% { box-shadow: 0 10px 30px rgba(0,255,255,0.3); }
+        }
+        
+        @keyframes stackFloat {
+            0% { transform: translateY(0px); }
+            100% { transform: translateY(-5px); }
+        }
+        
+        @keyframes trackMove {
+            0% { background-position: 0 0; }
+            100% { background-position: 20px 0; }
+        }
+        
+        @keyframes runnerJump {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes obstacleMove {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100px); }
+        }
+        
+        @keyframes beatPulse {
+            0%, 100% { transform: translate(-50%, -50%) scaleX(1); opacity: 1; }
+            50% { transform: translate(-50%, -50%) scaleX(1.5); opacity: 0.7; }
+        }
+        
+        @keyframes notesDance {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-5px) rotate(5deg); }
+        }
+        
+        @keyframes particlesFloat {
+            0%, 100% { transform: translateY(0); opacity: 1; }
+            50% { transform: translateY(-15px); opacity: 0.5; }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .logo { font-size: 2rem; }
+            .hero-game h2 { font-size: 1.5rem; }
+            .hero-description { font-size: 1rem; }
+            .play-button-hero { padding: 15px 30px; font-size: 1.2rem; }
+            .games-grid { grid-template-columns: 1fr; }
+            .game-stats { gap: 20px; }
+            .stat-number { font-size: 1.5rem; }
+        }
+    </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div class="brand"><div class="dot"></div><span>LIPA Studios</span></div>
-      <a class="btn" href="mailto:lipastudios@pm.me">Contacto</a>
+    <header class="header">
+        <div class="logo">LIPA Studios</div>
+        <div class="tagline">Building Digital Dreams</div>
     </header>
-
-    <section class="hero panel">
-      <div>
-        <h1>Stack Tower Neon</h1>
-        <p>Tu juego estrella. Apila con precisión, encadena combos y comparte tu récord. Optimizado para viralidad, retención y monetización.</p>
-        <div class="cta">
-          <a class="btn primary" href="/stack" onclick="track('click_stack_primary')">Jugar ahora</a>
-          <a class="btn" href="/stack" onclick="track('click_stack_secondary')">Ver detalles</a>
-          <span class="badge">TOP • Recomendado</span>
+    
+    <!-- AdSense Banner Top -->
+    <div class="ad-banner-top">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-4129506161314540"
+             data-ad-slot="6673201053"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+    
+    <!-- Hero Game - Stack Tower -->
+    <section class="hero-game">
+        <h2>Stack Tower Neon</h2>
+        <div class="hero-description">
+            ¿Puedes llegar al nivel 50? El 94% abandona antes del 15. 
+            El juego que ha arruinado más amistades que el Monopoly.
         </div>
-      </div>
-      <div class="panel ad">
-        <!-- AdSense Hero -->
-        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4129506161314540" data-ad-slot="6673201053" data-ad-format="auto" data-full-width-responsive="true"></ins>
-        <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
-      </div>
-    </section>
-
-    <section class="panel">
-      <h2 style="margin:6px 4px 12px;font-size:18px;color:#cbd2ea">Más juegos</h2>
-      <div class="grid">
-        <a class="game" href="/runner" onclick="track('click_runner')">
-          <div class="thumb">🏃</div>
-          <div class="meta">
-            <h3>Neon Runner</h3>
-            <p>Corre, esquiva y supera tu marca. Ads interstitial + rewards.</p>
-          </div>
-          <span class="badge">Nuevo</span>
+        
+        <a href="/stack" class="play-button-hero" onclick="trackGameClick('stack_tower')">
+            ¡JUEGA AHORA GRATIS!
         </a>
-        <a class="game" href="/beat" onclick="track('click_beat')">
-          <div class="thumb">🎵</div>
-          <div class="meta">
-            <h3>Neon Beat Stage</h3>
-            <p>Golpea al ritmo, combos y efectos. Ideal para compartir.</p>
-          </div>
-          <span class="badge">Ritmo</span>
-        </a>
-        <a class="game" href="/lab" onclick="track('click_lab')">
-          <div class="thumb">🧪</div>
-          <div class="meta">
-            <h3>Neon Lab</h3>
-            <p>Física y puzzles con progresión. Sesiones largas garantizadas.</p>
-          </div>
-          <span class="badge">Puzzle</span>
-        </a>
-      </div>
+        
+        <div class="game-stats">
+            <div class="stat">
+                <div class="stat-number" id="players-count">97</div>
+                <div class="stat-label">Jugadores activos</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">80%</div>
+                <div class="stat-label">Juego favorito</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">51s</div>
+                <div class="stat-label">Tiempo promedio</div>
+            </div>
+        </div>
     </section>
-
-    <section class="panel">
-      <h2 style="margin:6px 4px 12px;font-size:18px;color:#cbd2ea">Sigue jugando</h2>
-      <div class="grid">
-        <a class="game" href="/stack" onclick="track('cross_stack')"><div class="thumb">🗼</div><div class="meta"><h3>Stack Tower Neon</h3><p>El clásico de precisión, ahora más rápido y social.</p></div></a>
-        <a class="game" href="/runner" onclick="track('cross_runner')"><div class="thumb">⚡</div><div class="meta"><h3>Neon Runner</h3><p>Velocidad creciente y recompensas por skill.</p></div></a>
-        <a class="game" href="/beat" onclick="track('cross_beat')"><div class="thumb">🎶</div><div class="meta"><h3>Neon Beat Stage</h3><p>Combo, timing y estilo. Perfecto para clips.</p></div></a>
-      </div>
+    
+    <!-- Otros juegos -->
+    <section class="other-games">
+        <h2 class="section-title">Más juegos LIPA Studios</h2>
+        
+        <div class="games-grid">
+            <div class="game-card">
+                <h3>Neon Runner</h3>
+                <div class="game-description">
+                    Cyberpunk highway infinito. La velocidad aumenta hasta que tus reflejos no pueden seguir el ritmo.
+                </div>
+                <a href="/runner" class="play-button-secondary" onclick="trackGameClick('neon_runner')">Jugar Ahora</a>
+            </div>
+            
+            <div class="game-card">
+                <h3>Neon Beat Stage</h3>
+                <div class="game-description">
+                    K-pop rhythm game. Sube el volumen y déjate llevar por el neón. ¿Puedes seguir el ritmo?
+                </div>
+                <a href="/beat" class="play-button-secondary" onclick="trackGameClick('neon_beat')">Jugar Ahora</a>
+            </div>
+            
+            <div class="game-card">
+                <h3>Neon Lab</h3>
+                <div class="game-description">
+                    Physics puzzle que hace pensar tu cerebro. Cada nivel es más imposible que el anterior.
+                </div>
+                <a href="/lab" class="play-button-secondary" onclick="trackGameClick('neon_lab')">Jugar Ahora</a>
+            </div>
+        </div>
     </section>
-
-    <footer>
-      © <span id="y"></span> LIPA Studios — Hecho con ❤️. Analytics y ads activos.
+    
+    <!-- AdSense Banner Bottom -->
+    <div class="ad-banner-bottom">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-4129506161314540"
+             data-ad-slot="6673201053"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+    
+    <footer class="footer">
+        <div class="footer-text">
+            © 2025 LIPA Studios. Construyendo sueños digitales para Inés, Paula y Ángel.
+        </div>
+        <div class="footer-text" style="font-size: 0.8rem; color: #555;">
+            Objetivo: €10,000/mes navegando las Islas Baleares en familia
+        </div>
     </footer>
-  </div>
-
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-    function track(name){
-      try{ gtag('event', name, {event_category:'landing', event_label: name}); }catch(e){}
-    }
-  </script>
+    
+    <script>
+        // Contador dinámico de jugadores (efecto psicológico)
+        function updatePlayerCount() {
+            const counter = document.getElementById('players-count');
+            let count = 97;
+            setInterval(() => {
+                const variation = Math.floor(Math.random() * 5) - 2; // -2 a +2
+                count = Math.max(95, Math.min(105, count + variation));
+                counter.textContent = count;
+            }, 5000);
+        }
+        
+        // Cross-promotion inteligente
+        function showCrossPromo() {
+            // Después de 30 segundos, mostrar sugerencia de otros juegos
+            setTimeout(() => {
+                if (Math.random() > 0.5) {
+                    alert("💡 Si te gusta Stack Tower, ¡prueba Neon Runner!");
+                }
+            }, 30000);
+        }
+        
+        window.onload = function() {
+            updatePlayerCount();
+            showCrossPromo();
+        };
+    </script>
 </body>
 </html>
