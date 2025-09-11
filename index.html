@@ -282,6 +282,21 @@
         .game-thumb{transition:transform .25s ease, box-shadow .25s ease}
         .game-card:hover .game-thumb{transform:translateY(-4px) scale(1.05);box-shadow:0 8px 22px rgba(0,255,255,.18)}
 
+        
+        /* Wow effects: hero particles + prolonged hover glow */
+        .hero-game{overflow:hidden}
+        .hero-particles{position:absolute;inset:0;pointer-events:none}
+        .particle{position:absolute;width:6px;height:6px;border-radius:50%;
+            background:radial-gradient(circle, rgba(0,255,255,.9), rgba(0,255,255,0));
+            box-shadow:0 0 10px rgba(0,255,255,.7);opacity:.8;animation:floatUp 10s linear infinite}
+        .particle.pink{background:radial-gradient(circle, rgba(255,0,255,.9), rgba(255,0,255,0));
+            box-shadow:0 0 10px rgba(255,0,255,.7)}
+        @keyframes floatUp{0%{transform:translateY(20px) scale(.8);opacity:.0}
+            10%{opacity:.8}
+            100%{transform:translateY(-140%) scale(1.2);opacity:0}}
+        .play-button-hero.long-hover{box-shadow:0 0 24px rgba(0,255,255,.6), 0 0 60px rgba(255,0,255,.35)}
+        .play-button-secondary.long-hover{box-shadow:0 0 18px rgba(255,0,255,.5), 0 0 34px rgba(0,255,255,.35)}
+
         @media (max-width: 768px) {
             .logo { font-size: 2rem; }
             .hero-game h2 { font-size: 1.5rem; }
@@ -322,6 +337,7 @@
     
     <!-- Hero Game - Stack Tower -->
     <section class="hero-game">
+        <div class="hero-particles" id="heroParticles"></div>
         <h2>Stack Tower Neon</h2>
         <img class="hero-graphic" src="assets/thumb-stack.svg" alt="Stack Tower">
         <div class="hero-description">
@@ -432,5 +448,34 @@
             showCrossPromo();
         };
     </script>
+
+    <script>
+      (function(){
+        // Generate floating particles in hero
+        var c=document.getElementById('heroParticles');
+        if(c){
+          var count = 24; // lightweight
+          for(var i=0;i<count;i++){
+            var d=document.createElement('div');
+            d.className='particle'+(i%3==0?' pink':'');
+            d.style.left=(Math.random()*100)+'%';
+            d.style.bottom=(-10+Math.random()*30)+'px';
+            d.style.animationDuration=(8+Math.random()*6)+'s';
+            d.style.animationDelay=(Math.random()*6)+'s';
+            d.style.filter='blur('+(Math.random()*1.5)+'px)';
+            c.appendChild(d);
+          }
+        }
+        // Prolonged hover glow (600ms) for CTAs
+        function armLongHover(el){
+          var t; if(!el) return;
+          el.addEventListener('mouseenter', function(){ t=setTimeout(function(){ el.classList.add('long-hover'); }, 600); });
+          el.addEventListener('mouseleave', function(){ clearTimeout(t); el.classList.remove('long-hover'); });
+          el.addEventListener('touchstart', function(){ el.classList.add('long-hover'); setTimeout(function(){el.classList.remove('long-hover');}, 1200); }, {passive:true});
+        }
+        [].slice.call(document.querySelectorAll('.play-button-hero,.play-button-secondary')).forEach(armLongHover);
+      })();
+    </script>
+
 </body>
 </html>
