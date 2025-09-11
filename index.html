@@ -305,7 +305,7 @@
         .hero-game h2{animation:titlePulse 3s ease-in-out infinite}
         @keyframes titlePulse{0%,100%{text-shadow:0 0 20px #00ffff}50%{text-shadow:0 0 30px #00ffff, 0 0 40px #ff00ff}}
         .game-card{position:relative;overflow:hidden}
-        .game-card::before{content:"";position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:conic-gradient(transparent, rgba(0,255,255,0.1), transparent);animation:rotate 8s linear infinite;opacity:0;transition:opacity 0.3s}
+        .game-card::before{content:"";position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:conic-gradient(transparent, rgba(0,255,255,0.1), transparent);animation:rotate 8s linear infinite;opacity:0;transition:opacity 0.3s;pointer-events:none}
         .game-card:hover::before{opacity:1}
         @keyframes rotate{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
         .play-button-hero{position:relative;overflow:hidden}
