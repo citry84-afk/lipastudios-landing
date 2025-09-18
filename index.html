@@ -1,58 +1,38 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- GOOGLE ANALYTICS -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-633RQLC6T0"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);} 
-        gtag('js', new Date());
-        gtag('config', 'G-633RQLC6T0');
-    </script>
-
-    <!-- GOOGLE ADSENSE -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4129506161314540" crossorigin="anonymous"></script>
-    
-    <!-- SEO OPTIMIZATION -->
-    <title>LIPA Studios - 5 Juegos Neon Adictivos Gratis | Stack Tower, Neon Runner</title>
-    <meta name="description" content="Juegos HTML5 gratis con estética neon cyberpunk. Stack Tower, Neon Runner, Neon Beat Stage y más. Ya han jugado 440+ personas. ¿Cuál te enganchará?">
-    <meta name="keywords" content="juegos gratis, HTML5 games, Stack Tower, neon games, juegos cyberpunk, gaming España, juegos móvil">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SOCIAL MEDIA META -->
-    <meta property="og:title" content="LIPA Studios - 5 Juegos Neon Adictivos">
-    <meta property="og:description" content="€3.02 generados por usuarios reales. Record actual: 2,847 puntos en Stack Tower">
-    <meta property="og:image" content="https://lipastudios.com/og-image.jpg">
-    <meta name="twitter:card" content="summary_large_image">
+    <!-- ANALYTICS -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-633RQLC6T0"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-633RQLC6T0');
+    </script>
     
-    <!-- TECHNICAL META -->
-    <link rel="canonical" href="https://lipastudios.com">
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="LIPA Studios">
+    <!-- ADSENSE -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4129506161314540" crossorigin="anonymous"></script>
     
-    <!-- CSS STYLES INLINE -->
+    <title>LIPA Studios - 5 Juegos Neon Gratis | Stack Tower, Neon Runner</title>
+    <meta name="description" content="Juegos HTML5 gratis con estética neon cyberpunk. Stack Tower, Neon Runner, Neon Beat Stage y más. Diversión garantizada.">
+    
     <style>
-        /* NEON CYBERPUNK DESIGN SYSTEM */
-        :root {
-            --neon-pink: #ff00ff;
-            --neon-cyan: #00ffff;
-            --neon-yellow: #ffff00;
-            --dark-bg: #000014;
-            --gradient-primary: linear-gradient(45deg, var(--neon-pink), var(--neon-cyan));
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
         
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
         body {
-            background: var(--dark-bg);
+            background: #000014;
             color: #ffffff;
             font-family: 'Courier New', monospace;
             line-height: 1.6;
-            overflow-x: hidden;
         }
         
-        /* HERO SECTION */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -60,26 +40,24 @@
             justify-content: center;
             text-align: center;
             background: radial-gradient(circle, rgba(255,0,255,0.1) 0%, rgba(0,0,20,1) 70%);
-            position: relative;
+            padding: 2rem;
         }
         
         .hero h1 {
             font-size: clamp(2rem, 5vw, 4rem);
-            background: var(--gradient-primary);
+            background: linear-gradient(45deg, #ff00ff, #00ffff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 1rem;
-            text-shadow: 0 0 20px var(--neon-pink);
         }
         
         .hero-subtitle {
             font-size: clamp(1rem, 3vw, 1.5rem);
             margin-bottom: 2rem;
-            color: var(--neon-cyan);
+            color: #00ffff;
         }
         
-        /* SOCIAL PROOF SECTION */
-        .social-proof {
+        .stats {
             display: flex;
             justify-content: center;
             gap: 2rem;
@@ -90,30 +68,123 @@
         .stat {
             text-align: center;
             padding: 1rem;
-            border: 2px solid var(--neon-cyan);
+            border: 2px solid #00ffff;
             border-radius: 10px;
             background: rgba(0,255,255,0.1);
+            min-width: 120px;
         }
         
         .stat-number {
-            font-size: 2rem;
-            color: var(--neon-yellow);
+            font-size: 1.5rem;
+            color: #ffff00;
             font-weight: bold;
         }
         
-        /* EMAIL CAPTURE */
-        .email-capture {
+        .stat-label {
+            font-size: 0.9rem;
+            color: #ffffff;
+        }
+        
+        .games-section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #00ffff;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 1.2rem;
+            color: #ffffff;
+        }
+        
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .game-card {
+            background: linear-gradient(135deg, rgba(255,0,255,0.1), rgba(0,255,255,0.1));
+            border: 2px solid #ff00ff;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .game-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .game-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #00ffff;
+        }
+        
+        .game-description {
+            margin-bottom: 2rem;
+            line-height: 1.5;
+            color: #ffffff;
+        }
+        
+        .play-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: linear-gradient(45deg, #ff00ff, #00ffff);
+            color: #000014;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .play-button:hover {
+            transform: scale(1.05);
+        }
+        
+        .badge {
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: #ffff00;
+            color: #000014;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            display: inline-block;
+        }
+        
+        .email-section {
             background: rgba(255,0,255,0.1);
             padding: 3rem 2rem;
             margin: 4rem 0;
-            border-radius: 15px;
             text-align: center;
+        }
+        
+        .email-title {
+            font-size: 2rem;
+            color: #ffff00;
+            margin-bottom: 1rem;
+        }
+        
+        .email-subtitle {
+            margin-bottom: 2rem;
+            color: #ffffff;
         }
         
         .email-form {
             display: flex;
             max-width: 400px;
-            margin: 2rem auto 0;
+            margin: 0 auto;
             gap: 1rem;
         }
         
@@ -121,138 +192,83 @@
             flex: 1;
             padding: 12px;
             background: rgba(0,0,0,0.5);
-            border: 2px solid var(--neon-cyan);
+            border: 2px solid #00ffff;
             color: white;
             border-radius: 5px;
         }
         
         .email-submit {
             padding: 12px 24px;
-            background: var(--gradient-primary);
+            background: linear-gradient(45deg, #ff00ff, #00ffff);
             border: none;
-            color: var(--dark-bg);
+            color: #000014;
             border-radius: 5px;
             font-weight: bold;
             cursor: pointer;
         }
         
-        /* GAMES GRID */
-        .games-section {
-            padding: 4rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .games-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .game-card {
-            background: linear-gradient(135deg, rgba(255,0,255,0.1), rgba(0,255,255,0.1));
-            border: 2px solid var(--neon-pink);
-            border-radius: 15px;
-            padding: 2rem;
-            text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .game-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(255,0,255,0.3);
-        }
-        
-        .game-title {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--neon-cyan);
-        }
-        
-        .game-description {
-            margin-bottom: 2rem;
-            line-height: 1.5;
-        }
-        
-        .play-button {
-            display: inline-block;
-            padding: 15px 30px;
-            background: var(--gradient-primary);
-            color: var(--dark-bg);
-            text-decoration: none;
-            border-radius: 10px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: transform 0.3s;
-        }
-        
-        .play-button:hover {
-            transform: scale(1.05);
-        }
-        
-        /* CTA SECTION */
         .final-cta {
             text-align: center;
             padding: 4rem 2rem;
             background: linear-gradient(45deg, rgba(255,0,255,0.1), rgba(0,255,255,0.1));
         }
         
-        /* RESPONSIVE */
+        .cta-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #ffff00;
+        }
+        
+        .cta-text {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #ffffff;
+        }
+        
         @media (max-width: 768px) {
-            .social-proof { flex-direction: column; align-items: center; }
-            .email-form { flex-direction: column; }
-            .games-grid { grid-template-columns: 1fr; }
+            .stats {
+                flex-direction: column;
+                align-items: center;
+            }
+            .email-form {
+                flex-direction: column;
+            }
+            .games-grid {
+                grid-template-columns: 1fr;
+            }
         }
-        
-        /* ADSENSE AD CONTAINERS */
-        .ad-container {
-            text-align: center;
-            margin: 3rem 0;
-            min-height: 250px;
-        }
-        
-        /* NEON ANIMATIONS */
-        @keyframes neonGlow {
-            0%, 100% { text-shadow: 0 0 5px currentColor; }
-            50% { text-shadow: 0 0 20px currentColor, 0 0 30px currentColor; }
-        }
-        
-        .neon-text { animation: neonGlow 2s ease-in-out infinite alternate; }
     </style>
 </head>
-
 <body>
     <!-- HERO SECTION -->
     <section class="hero">
         <div>
-            <h1 class="neon-text">5 Juegos Neon Que Te Van a Enganchar</h1>
-            <p class="hero-subtitle">Estética cyberpunk, adicción garantizada</p>
+            <h1>5 Juegos Neon Para Disfrutar</h1>
+            <p class="hero-subtitle">Estética cyberpunk, diversión garantizada</p>
             
-            <!-- SOCIAL PROOF -->
-            <div class="social-proof">
-            <div class="stat">
-                    <div class="stat-number">15,000+</div>
-                    <div>Partidas jugadas hoy</div>
-            </div>
-            <div class="stat">
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-number">€3.02</div>
+                    <div class="stat-label">Generados</div>
+                </div>
+                <div class="stat">
                     <div class="stat-number">2,847</div>
-                    <div>Récord actual Stack Tower</div>
-            </div>
-            <div class="stat">
+                    <div class="stat-label">Récord Stack Tower</div>
+                </div>
+                <div class="stat">
                     <div class="stat-number">440+</div>
-                    <div>Jugadores activos</div>
+                    <div class="stat-label">Jugadores</div>
                 </div>
             </div>
             
-            <p style="margin-top: 2rem; font-size: 1.2rem;">↓ Elige tu primer juego ↓</p>
+            <p style="margin-top: 2rem; font-size: 1.2rem;">↓ Elige tu juego favorito ↓</p>
         </div>
     </section>
     
     <!-- EMAIL CAPTURE -->
-    <section class="email-capture">
-        <h2 style="color: var(--neon-yellow); margin-bottom: 1rem;">¿Quieres ser el primero en probar nuevos juegos?</h2>
-        <p>Acceso early a nuevos lanzamientos y notificaciones exclusivas de LIPA Studios</p>
+    <section class="email-section">
+        <h2 class="email-title">¿Quieres acceso anticipado a nuevos juegos?</h2>
+        <p class="email-subtitle">Recibe notificaciones de nuevos lanzamientos y acceso early a actualizaciones</p>
         <form class="email-form" onsubmit="handleEmailSignup(event)">
             <input type="email" class="email-input" placeholder="tu@email.com" required>
             <button type="submit" class="email-submit">APUNTARME</button>
@@ -260,142 +276,104 @@
     </section>
     
     <!-- GAMES SECTION -->
-    <section class="games-section" id="games">
-        <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem; color: var(--neon-cyan);">
-            Elige Tu Juego
-        </h2>
-        <p style="text-align: center; margin-bottom: 3rem; font-size: 1.2rem;">
-            Todos gratis, todos adictivos, todos con estética neon
-        </p>
+    <section class="games-section">
+        <h2 class="section-title">Nuestros Juegos</h2>
+        <p class="section-subtitle">Todos gratis, todos con estética neon cyberpunk</p>
         
         <div class="games-grid">
-            <!-- STACK TOWER -->
             <div class="game-card">
-                <h3 class="game-title">🏗️ Stack Tower Neon</h3>
+                <h3 class="game-title">Stack Tower WOW</h3>
                 <p class="game-description">
-                    El más adictivo. Apila bloques con precisión perfecta. 
-                    Récord actual: 2,847 puntos. ¿Puedes superarlo?
+                    La versión extrema: música retro, efectos visuales impresionantes y mecánicas perfeccionadas. 
+                    La evolución de Stack Tower.
                 </p>
-                <a href="https://stack-tower-neon.netlify.app" class="play-button" onclick="trackGameClick('stack_tower')" target="_blank" rel="noopener">
+                <a href="https://stack-tower-wow.netlify.app" class="play-button" onclick="trackGameClick('stack_tower_wow')">
                     JUGAR AHORA
                 </a>
-                <div style="margin-top: 1rem; color: var(--neon-yellow);">
-                    ⭐ MÁS POPULAR
-                </div>
+                <div class="badge">NUEVO</div>
             </div>
             
-            <!-- STACK TOWER WOW -->
             <div class="game-card">
-                <h3 class="game-title">🚀 Stack Tower WOW</h3>
+                <h3 class="game-title">Stack Tower Neon</h3>
                 <p class="game-description">
-                    La versión más épica. Efectos espectaculares, música, 
-                    combos y velocidad extrema. ¡Para los más hardcore!
+                    Apila bloques con precisión. Simple de aprender, difícil de dominar. 
+                    Récord actual: 2,847 puntos.
                 </p>
-                <a href="https://stack-tower-wow.netlify.app" class="play-button" onclick="trackGameClick('stack_tower_wow')" target="_blank" rel="noopener">
+                <a href="https://stack-tower-neon.netlify.app" class="play-button" onclick="trackGameClick('stack_tower')">
                     JUGAR AHORA
                 </a>
-                <div style="margin-top: 1rem; color: var(--neon-pink);">
-                    🔥 ULTRA ÉPICO
-                </div>
+                <div class="badge">POPULAR</div>
             </div>
             
-            <!-- NEON RUNNER -->
             <div class="game-card">
-                <h3 class="game-title">🏃 Neon Runner</h3>
+                <h3 class="game-title">Neon Runner</h3>
                 <p class="game-description">
-                    Cyberpunk highway infinito. La velocidad aumenta hasta que 
-                    tus reflejos no pueden seguir el ritmo.
+                    Corre por autopistas cyberpunk. La velocidad aumenta progresivamente 
+                    creando un desafío emocionante.
                 </p>
-                <a href="https://neon-runner-lipastudios.netlify.app" class="play-button" onclick="trackGameClick('neon_runner')" target="_blank" rel="noopener">
+                <a href="https://neon-runner-lipastudios.netlify.app" class="play-button" onclick="trackGameClick('neon_runner')">
                     JUGAR AHORA
                 </a>
             </div>
             
-            <!-- NEON BEAT STAGE -->
             <div class="game-card">
-                <h3 class="game-title">🎵 Neon Beat Stage</h3>
+                <h3 class="game-title">Neon Beat Stage</h3>
                 <p class="game-description">
-                    K-pop rhythm game. Sube el volumen y déjate llevar por el neón. 
-                    ¿Puedes seguir el ritmo?
+                    Juego de ritmo con música K-pop. Sigue el compás y disfruta 
+                    de la experiencia audiovisual neon.
                 </p>
-                <a href="https://neon-beat-stage.netlify.app" class="play-button" onclick="trackGameClick('neon_beat')" target="_blank" rel="noopener">
+                <a href="https://neon-beat-stage.netlify.app" class="play-button" onclick="trackGameClick('neon_beat')">
                     JUGAR AHORA
                 </a>
             </div>
             
-            <!-- NEON LAB -->
             <div class="game-card">
-                <h3 class="game-title">🧪 Neon Lab</h3>
+                <h3 class="game-title">Neon Lab</h3>
                 <p class="game-description">
-                    Physics puzzle que hace pensar tu cerebro. 
-                    Cada nivel es más imposible que el anterior.
+                    Puzzles de física que desafían tu ingenio. 
+                    Cada nivel presenta nuevos retos para resolver.
                 </p>
-                <a href="https://neon-lab-physics.netlify.app" class="play-button" onclick="trackGameClick('neon_lab')" target="_blank" rel="noopener">
+                <a href="https://neon-lab-physics.netlify.app" class="play-button" onclick="trackGameClick('neon_lab')">
                     JUGAR AHORA
                 </a>
             </div>
             
-            <!-- NEON CORP MANAGER -->
             <div class="game-card">
-                <h3 class="game-title">🏢 Neon Corp Manager</h3>
+                <h3 class="game-title">Neon Corp Manager</h3>
                 <p class="game-description">
-                    Construye tu imperio corporativo neon. Gestiona edificios, 
-                    contrata trabajadores y domina el mercado digital.
+                    Construye y gestiona tu corporación en un mundo cyberpunk. 
+                    Estrategia y gestión de recursos.
                 </p>
-                <a href="https://neoncorp.netlify.app" class="play-button" onclick="trackGameClick('neon_corp')" target="_blank" rel="noopener">
+                <a href="https://neoncorp.netlify.app" class="play-button" onclick="trackGameClick('neon_corp')">
                     JUGAR AHORA
                 </a>
-                <div style="margin-top: 1rem; color: var(--neon-pink);">
-                    🆕 NUEVO
-                </div>
             </div>
         </div>
     </section>
     
-    <!-- AD CONTAINER -->
-    <div class="ad-container">
-        <!-- AdSense Ad Unit -->
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-4129506161314540"
-             data-ad-slot="6673201053"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-    </div>
-    
     <!-- FINAL CTA -->
     <section class="final-cta">
-        <h2 style="font-size: 2rem; margin-bottom: 2rem; color: var(--neon-yellow);">
-            ¿Cuál te va a quitar el sueño esta noche?
-        </h2>
-        <p style="font-size: 1.2rem; margin-bottom: 2rem;">
-            15,000+ partidas jugadas hoy. Tu turno.
-        </p>
+        <h2 class="cta-title">¿Cuál será tu favorito?</h2>
+        <p class="cta-text">440+ jugadores ya han elegido. Tu turno de disfrutar.</p>
         <a href="#games" class="play-button" style="font-size: 1.3rem; padding: 20px 40px;">
             EMPEZAR A JUGAR
         </a>
     </section>
     
-    <!-- JAVASCRIPT -->
     <script>
-        // EMAIL SIGNUP TRACKING
         function handleEmailSignup(event) {
             event.preventDefault();
             const email = event.target.querySelector('input').value;
             
-            // Track conversion
             gtag('event', 'email_signup', {
                 method: 'landing_page',
                 value: 1
             });
             
-            alert('¡Perfecto! Te avisaremos de nuevos juegos. Mientras tanto... ¿empezamos con Stack Tower? 🎮');
-            
-            // Clear form
+            alert('¡Perfecto! Te avisaremos de nuevos juegos.');
             event.target.reset();
         }
         
-        // GAME CLICK TRACKING
         function trackGameClick(gameName) {
             gtag('event', 'game_click', {
                 game_name: gameName,
@@ -403,75 +381,20 @@
             });
         }
         
-        // ADSENSE INITIALIZATION
-        (adsbygoogle = window.adsbygoogle || []).push({});
-        
-        // SMOOTH SCROLLING
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-        
-        // SOCIAL PROOF ANIMATION ON SCROLL
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                    
-                    // Track social proof views
-                    if (entry.target.classList.contains('stat')) {
-                        gtag('event', 'social_proof_view', {
-                            element: 'stats_section'
-                        });
-                    }
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
                 }
             });
-        }, observerOptions);
-        
-        document.querySelectorAll('.stat, .game-card').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(el);
         });
         
-        // PAGE LOAD TRACKING
-        window.addEventListener('load', () => {
-            gtag('event', 'page_loaded', {
-                page_title: 'LIPA Studios Landing'
-            });
+        gtag('event', 'page_loaded', {
+            page_title: 'LIPA Studios Landing'
         });
-    </script>
-
-    <!-- STRUCTURED DATA FOR SEO -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "GameDeveloper",
-        "name": "LIPA Studios",
-        "url": "https://lipastudios.com",
-        "description": "Desarrollador de juegos HTML5 con estética neon cyberpunk",
-        "sameAs": [
-            "https://www.tiktok.com/@lipa.studios",
-            "https://www.instagram.com/lipa.studios"
-        ],
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "EUR",
-            "category": "Free Games"
-        }
-    }
     </script>
 </body>
 </html>
