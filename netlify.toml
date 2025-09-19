@@ -1,0 +1,89 @@
+[build]
+  publish = "."
+  command = ""
+
+[build.environment]
+  NODE_VERSION = "18"
+
+# SEO Headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+
+# Cache static assets
+[[headers]]
+  for = "*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+# PWA Support
+[[headers]]
+  for = "/manifest.json"
+  [headers.values]
+    Content-Type = "application/manifest+json"
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/sitemap.xml"
+  [headers.values]
+    Content-Type = "application/xml"
+    Cache-Control = "public, max-age=86400"
+
+# Gzip compression
+[[headers]]
+  for = "*.html"
+  [headers.values]
+    Content-Encoding = "gzip"
+
+[[headers]]
+  for = "*.js"
+  [headers.values]
+    Content-Encoding = "gzip"
+
+[[headers]]
+  for = "*.css"
+  [headers.values]
+    Content-Encoding = "gzip"
+
+# Security headers for monetization
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Content-Security-Policy = "default-src 'self' 'unsafe-inline' 'unsafe-eval' *.google.com *.googlesyndication.com *.googletagmanager.com *.gstatic.com data: blob:; img-src 'self' 'unsafe-inline' data: blob: *.google.com *.googlesyndication.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' *.google.com *.googlesyndication.com *.googletagmanager.com *.gstatic.com *.adtrafficquality.google; style-src 'self' 'unsafe-inline' *.googleapis.com; font-src 'self' *.googleapis.com *.gstatic.com data:; connect-src 'self' *.google.com *.googlesyndication.com *.googletagmanager.com *.google-analytics.com region1.google-analytics.com *.adtrafficquality.google;"
+
+# Redirects for SEO
+[[redirects]]
+  from = "/juegos"
+  to = "/#games"
+  status = 301
+
+[[redirects]]
+  from = "/games"
+  to = "/#games"
+  status = 301
+
+# SPA routing for PWA
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+

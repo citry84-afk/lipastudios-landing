@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://lipastudios.com/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
+
+# Disallow admin areas (if any)
+Disallow: /admin/
+Disallow: /private/
+
+# Allow all game pages
+Allow: /stack-tower-wow/
+Allow: /neon-runner-wow/
+Allow: /stack-tower-neon/
+Allow: /neon-runner/
+Allow: /neon-beat-stage/
+Allow: /neon-lab-physics/
+Allow: /neon-corp-manager/
+
