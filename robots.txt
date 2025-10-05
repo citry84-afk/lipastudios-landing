@@ -17,6 +17,7 @@ Allow: /neon-runner-wow/
 Allow: /stack-tower-neon/
 Allow: /neon-runner/
 Allow: /neon-beat-stage/
+Allow: /neon-beat-wow/
 Allow: /neon-lab-physics/
 Allow: /neon-corp-manager/
 

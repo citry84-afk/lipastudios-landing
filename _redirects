@@ -1,4 +1,8 @@
-/stack https://stack-tower-neon2.netlify.app 302
-/runner https://neon-runner-lipastudios.netlify.app/ 302
-/beat https://neon-beat-stage.netlify.app 302
-/lab https://neon-lab-physics.netlify.app/ 302
+# Redirect www to non-www (SEO best practice)
+https://www.lipastudios.com/* https://lipastudios.com/:splat 301
+
+# Game redirects
+/stack https://stack-tower-wow.netlify.app 301
+/runner https://neon-runner-wow.netlify.app 301
+/beat https://neon-beat-stage.netlify.app 301
+/lab https://neon-lab-physics.netlify.app 301

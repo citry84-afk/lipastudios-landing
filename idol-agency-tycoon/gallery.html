@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15 Idols Únicos - Idol Agency Tycoon | LIPA Studios</title>
+    <meta name="description" content="Descubre las 15 idols únicas de Idol Agency Tycoon. Cada una con su estilo, personalidad y rareza. ¡Construye tu grupo perfecto!">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="15 Idols Únicos - Idol Agency Tycoon">
+    <meta property="og:description" content="Descubre las 15 idols únicas con estilos únicos. Desde la elegante Crystal hasta la rebelde Raven.">
+    <meta property="og:image" content="https://idol-agency-tycoon.netlify.app/idols-og.jpg">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #fff;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 60px 0;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            margin-bottom: 40px;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.2), transparent);
+            animation: shimmer 3s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        .title {
+            font-size: 56px;
+            font-weight: 800;
+            background: linear-gradient(45deg, #FFD700, #FFA500, #FF69B4, #8A2BE2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+            animation: title-glow 2s ease-in-out infinite alternate;
+        }
+        
+        .subtitle {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #FFD700;
+        }
+        
+        .description {
+            font-size: 18px;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .rarity-legend {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+        
+        .rarity-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+        }
+        
+        .rarity-inicial { background: rgba(169, 169, 169, 0.3); border: 2px solid #A9A9A9; }
+        .rarity-comun { background: rgba(65, 105, 225, 0.3); border: 2px solid #4169E1; }
+        .rarity-raro { background: rgba(138, 43, 226, 0.3); border: 2px solid #8A2BE2; }
+        .rarity-epico { background: rgba(255, 215, 0, 0.3); border: 2px solid #FFD700; }
+        .rarity-legendario { 
+            background: rgba(255, 215, 0, 0.3); 
+            border: 2px solid #FFD700; 
+            animation: legendary-glow 2s ease-in-out infinite;
+        }
+        
+        .idols-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .idol-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 0;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            position: relative;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .idol-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(255, 215, 0, 0.3);
+            border-color: #FFD700;
+        }
+        
+        .idol-card.inicial { border-color: #A9A9A9; }
+        .idol-card.comun { border-color: #4169E1; }
+        .idol-card.raro { border-color: #8A2BE2; }
+        .idol-card.epico { border-color: #FFD700; }
+        .idol-card.legendario { 
+            border-color: #FFD700; 
+            animation: legendary-card-glow 3s ease-in-out infinite;
+        }
+        
+        @keyframes legendary-card-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(255, 215, 0, 0.6); }
+        }
+        
+        .idol-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .idol-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            animation: image-shine 3s infinite;
+        }
+        
+        @keyframes image-shine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .rarity-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .rarity-inicial-badge { background: #A9A9A9; color: #fff; }
+        .rarity-comun-badge { background: #4169E1; color: #fff; }
+        .rarity-raro-badge { background: #8A2BE2; color: #fff; }
+        .rarity-epico-badge { background: #FFD700; color: #333; }
+        .rarity-legendario-badge { 
+            background: linear-gradient(45deg, #FFD700, #FFA500); 
+            color: #333; 
+            animation: badge-pulse 2s infinite;
+        }
+        
+        @keyframes badge-pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        .idol-info {
+            padding: 25px;
+        }
+        
+        .idol-name {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #FFD700;
+        }
+        
+        .idol-role {
+            font-size: 16px;
+            color: #FFA500;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .idol-description {
+            font-size: 14px;
+            line-height: 1.5;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .idol-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+        
+        .stat-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .stat-label {
+            font-size: 12px;
+            opacity: 0.8;
+            margin-bottom: 5px;
+        }
+        
+        .stat-value {
+            font-size: 16px;
+            font-weight: bold;
+            color: #FFD700;
+        }
+        
+        .play-section {
+            text-align: center;
+            padding: 60px 0;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            margin: 60px 0;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+        }
+        
+        .play-button {
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            border: none;
+            border-radius: 15px;
+            padding: 20px 50px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 20px;
+            box-shadow: 0 8px 30px rgba(255, 215, 0, 0.4);
+            animation: claim-pulse 2s ease-in-out infinite;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .play-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 40px rgba(255, 215, 0, 0.6);
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 60px;
+            border-top: 2px solid rgba(255, 215, 0, 0.3);
+        }
+        
+        .back-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .back-link {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 15px;
+            padding: 15px 30px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .back-link:hover {
+            background: rgba(255, 215, 0, 0.2);
+            border-color: #FFD700;
+            transform: translateY(-2px);
+        }
+        
+        /* Animations */
+        @keyframes title-glow {
+            0% { text-shadow: 0 0 10px rgba(255, 215, 0, 0.5); }
+            100% { text-shadow: 0 0 20px rgba(255, 215, 0, 0.8); }
+        }
+        
+        @keyframes claim-pulse {
+            0%, 100% { box-shadow: 0 8px 30px rgba(255, 215, 0, 0.4); }
+            50% { box-shadow: 0 12px 40px rgba(255, 215, 0, 0.7); }
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .title { font-size: 36px; }
+            .subtitle { font-size: 20px; }
+            .idols-grid { grid-template-columns: 1fr; }
+            .rarity-legend { gap: 15px; }
+            .play-button { padding: 15px 30px; font-size: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="title">🌟 15 IDOLS ÚNICAS</div>
+            <div class="subtitle">Cada una con su estilo, personalidad y rareza</div>
+            <div class="description">
+                Descubre las 15 idols únicas de Idol Agency Tycoon. Desde la elegante Crystal hasta la rebelde Raven, 
+                cada idol tiene sus propias estadísticas, rol especializado y rareza única. ¡Construye tu grupo perfecto!
+            </div>
+        </div>
+        
+        <div class="rarity-legend">
+            <div class="rarity-item rarity-inicial">
+                <span>⚪</span>
+                <span>Inicial (500💰)</span>
+            </div>
+            <div class="rarity-item rarity-comun">
+                <span>🔵</span>
+                <span>Común (300💰)</span>
+            </div>
+            <div class="rarity-item rarity-raro">
+                <span>🟣</span>
+                <span>Raro (600💰)</span>
+            </div>
+            <div class="rarity-item rarity-epico">
+                <span>🟡</span>
+                <span>Épico (900💰)</span>
+            </div>
+            <div class="rarity-item rarity-legendario">
+                <span>⭐</span>
+                <span>Legendario (1500💰)</span>
+            </div>
+        </div>
+        
+        <div class="idols-grid">
+            <!-- Iniciales -->
+            <div class="idol-card inicial">
+                <div class="idol-image">
+                    <img src="https://i.imgur.com/Db5nBOw.jpeg" alt="Luna - Main Vocal" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;">
+                </div>
+                <div class="rarity-badge rarity-inicial-badge">Inicial</div>
+                <div class="idol-info">
+                    <div class="idol-name">Luna</div>
+                    <div class="idol-role">Main Vocal</div>
+                    <div class="idol-description">
+                        La voz angelical del grupo. Luna tiene un talento natural para el canto que cautiva a cualquier audiencia.
+                    </div>
+                    <div class="idol-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">Vocal</div>
+                            <div class="stat-value">8</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Dance</div>
+                            <div class="stat-value">5</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Rap</div>
+                            <div class="stat-value">4</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Visual</div>
+                            <div class="stat-value">7</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="idol-card inicial">
+                <div class="idol-image">
+                    <img src="https://i.imgur.com/YGVMeA0.jpeg" alt="Stella - Lead Dancer" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;">
+                </div>
+                <div class="rarity-badge rarity-inicial-badge">Inicial</div>
+                <div class="idol-info">
+                    <div class="idol-name">Stella</div>
+                    <div class="idol-role">Lead Dancer</div>
+                    <div class="idol-description">
+                        La reina del escenario. Stella domina el arte de la danza con movimientos fluidos y expresivos.
+                    </div>
+                    <div class="idol-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">Vocal</div>
+                            <div class="stat-value">5</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Dance</div>
+                            <div class="stat-value">9</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Rap</div>
+                            <div class="stat-value">5</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Visual</div>
+                            <div class="stat-value">6</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="idol-card inicial">
+                <div class="idol-image">
+                    <img src="https://i.imgur.com/aRSVHvb.jpeg" alt="Nova - Main Rapper" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;">
+                </div>
+                <div class="rarity-badge rarity-inicial-badge">Inicial</div>
+                <div class="idol-info">
+                    <div class="idol-name">Nova</div>
+                    <div class="idol-role">Main Rapper</div>
+                    <div class="idol-description">
+                        La fuerza lírica del grupo. Nova combina flow poderoso con letras impactantes que conectan con la audiencia.
+                    </div>
+                    <div class="idol-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">Vocal</div>
+                            <div class="stat-value">4</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Dance</div>
+                            <div class="stat-value">6</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Rap</div>
+                            <div class="stat-value">9</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Visual</div>
+                            <div class="stat-value">5</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="idol-card inicial">
+                <div class="idol-image">
+                    <img src="https://i.imgur.com/Xf5DK5I.jpeg" alt="Aurora - Visual" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;">
+                </div>
+                <div class="rarity-badge rarity-inicial-badge">Inicial</div>
+                <div class="idol-info">
+                    <div class="idol-name">Aurora</div>
+                    <div class="idol-role">Visual</div>
+                    <div class="idol-description">
+                        La belleza que ilumina el escenario. Aurora tiene una presencia visual única que atrae todas las miradas.
+                    </div>
+                    <div class="idol-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">Vocal</div>
+                            <div class="stat-value">6</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Dance</div>
+                            <div class="stat-value">6</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Rap</div>
+                            <div class="stat-value">4</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Visual</div>
+                            <div class="stat-value">9</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="idol-card inicial">
+                <div class="idol-image">
+                    <img src="https://i.imgur.com/Yrkljdb.jpeg" alt="Crystal - All-Rounder" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;">
+                </div>
+                <div class="rarity-badge rarity-inicial-badge">Inicial</div>
+                <div class="idol-info">
+                    <div class="idol-name">Crystal</div>
+                    <div class="idol-role">All-Rounder</div>
+                    <div class="idol-description">
+                        La versatilidad personificada. Crystal domina todas las áreas con equilibrio perfecto y carisma natural.
+                    </div>
+                    <div class="idol-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">Vocal</div>
+                            <div class="stat-value">7</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Dance</div>
+                            <div class="stat-value">7</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Rap</div>
+                            <div class="stat-value">7</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Visual</div>
+                            <div class="stat-value">7</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Comunes -->
+            <div class="idol-card comun">
+                <div class="idol-image">
+                    <img src="https://i.imgur.com/YpI0XCm.png" alt="Melody - Sub Vocal" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;">
+                </div>
+                <div class="rarity-badge rarity-comun-badge">Común</div>
+                <div class="idol-info">
+                    <div class="idol-name">Melody</div>
+                    <div class="idol-role">Sub Vocal</div>
+                    <div class="idol-description">
+                        La dulzura musical. Melody aporta armonías suaves y melodías que complementan perfectamente al grupo.
+                    </div>
+                    <div class="idol-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">Vocal</div>
+                            <div class="stat-value">6</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Dance</div>
+                            <div class="stat-value">4</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Rap</div>
+                            <div class="stat-value">3</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Visual</div>
+                            <div class="stat-value">5</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="idol-card comun">
+                <div class="idol-image">
+                    <img src="https://i.imgur.com/yym5YTA.png" alt="Winter - Sub Dancer" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;">
+                </div>
+                <div class="rarity-badge rarity-comun-badge">Común</div>
+                <div class="idol-info">
+                    <div class="idol-name">Winter</div>
+                    <div class="idol-role">Sub Dancer</div>
+                    <div class="idol-description">
+                        La elegancia helada. Winter ejecuta coreografías con precisión glacial y movimientos hipnotizantes.
+                    </div>
+                    <div class="idol-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">Vocal</div>
+                            <div class="stat-value">4</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Dance</div>
+                            <div class="stat-value">6</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Rap</div>
+                            <div class="stat-value">3</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Visual</div>
+                            <div class="stat-value">6</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Raros -->
+            <div class="idol-card raro">
+                <div class="idol-image">
+                    <img src="https://i.imgur.com/yEMb1J1.png" alt="Raven - Lead Rapper" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;">
+                </div>
+                <div class="rarity-badge rarity-raro-badge">Raro</div>
+                <div class="idol-info">
+                    <div class="idol-name">Raven</div>
+                    <div class="idol-role">Lead Rapper</div>
+                    <div class="idol-description">
+                        La intensidad lírica. Raven combina flow agresivo con letras profundas que conectan con las emociones.
+                    </div>
+                    <div class="idol-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">Vocal</div>
+                            <div class="stat-value">5</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Dance</div>
+                            <div class="stat-value">6</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Rap</div>
+                            <div class="stat-value">8</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Visual</div>
+                            <div class="stat-value">6</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="idol-card raro">
+                <div class="idol-image">
+                    <img src="https://i.imgur.com/B6c0F35.png" alt="Honey - Center" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;">
+                </div>
+                <div class="rarity-badge rarity-raro-badge">Raro</div>
+                <div class="idol-info">
+                    <div class="idol-name">Honey</div>
+                    <div class="idol-role">Center</div>
+                    <div class="idol-description">
+                        La dulzura que domina el escenario. Honey tiene el carisma natural para ser el centro de atención.
+                    </div>
+                    <div class="idol-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">Vocal</div>
+                            <div class="stat-value">7</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Dance</div>
+                            <div class="stat-value">7</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Rap</div>
+                            <div class="stat-value">5</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Visual</div>
+                            <div class="stat-value">8</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="idol-card raro">
+                <div class="idol-image">
+                    <img src="https://i.imgur.com/astxJjz.png" alt="Azure - Vocalist" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;">
+                </div>
+                <div class="rarity-badge rarity-raro-badge">Raro</div>
+                <div class="idol-info">
+                    <div class="idol-name">Azure</div>
+                    <div class="idol-role">Vocalist</div>
+                    <div class="idol-description">
+                        La profundidad oceánica. Azure tiene una voz que fluye como las olas, profunda y envolvente.
+                    </div>
+                    <div class="idol-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">Vocal</div>
+                            <div class="stat-value">8</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Dance</div>
+                            <div class="stat-value">5</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Rap</div>
+                            <div class="stat-value">4</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Visual</div>
+                            <div class="stat-value">7</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="idol-card raro">
+                <div class="idol-image">
+                    <img src="https://i.imgur.com/Qxjjpvi.png" alt="Spike - Rapper" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;">
+                </div>
+                <div class="rarity-badge rarity-raro-badge">Raro</div>
+                <div class="idol-info">
+                    <div class="idol-name">Spike</div>
+                    <div class="idol-role">Rapper</div>
+                    <div class="idol-description">
+                        La energía punzante. Spike combina flow agudo con movimientos dinámicos que electrifican el escenario.
+                    </div>
+                    <div class="idol-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">Vocal</div>
+                            <div class="stat-value">4</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Dance</div>
+                            <div class="stat-value">7</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Rap</div>
+                            <div class="stat-value">8</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Visual</div>
+                            <div class="stat-value">6</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Épicos -->
+            <div class="idol-card epico">
+                <div class="idol-image">
+                    <img src="https://i.imgur.com/wyleUlB.png" alt="Sage - Main Producer" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;">
+                </div>
+                <div class="rarity-badge rarity-epico-badge">Épico</div>
+                <div class="idol-info">
+                    <div class="idol-name">Sage</div>
+                    <div class="idol-role">Main Producer</div>
+                    <div class="idol-description">
+                        La sabiduría musical. Sage no solo interpreta, sino que crea, produciendo hits que definen una generación.
+                    </div>
+                    <div class="idol-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">Vocal</div>
+                            <div class="stat-value">7</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Dance</div>
+                            <div class="stat-value">6</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Rap</div>
+                            <div class="stat-value">7</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Visual</div>
+                            <div class="stat-value">8</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="idol-card epico">
+                <div class="idol-image">
+                    <img src="https://i.imgur.com/OTsCmVY.png" alt="Blaze - Performance Director" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;">
+                </div>
+                <div class="rarity-badge rarity-epico-badge">Épico</div>
+                <div class="idol-info">
+                    <div class="idol-name">Blaze</div>
+                    <div class="idol-role">Performance Director</div>
+                    <div class="idol-description">
+                        La llama que consume el escenario. Blaze dirige performances que queman las listas y conquistan el mundo.
+                    </div>
+                    <div class="idol-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">Vocal</div>
+                            <div class="stat-value">6</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Dance</div>
+                            <div class="stat-value">9</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Rap</div>
+                            <div class="stat-value">6</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Visual</div>
+                            <div class="stat-value">8</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="idol-card epico">
+                <div class="idol-image">
+                    <img src="https://i.imgur.com/l5f2Bmr.png" alt="Ember - Main Dancer" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;">
+                </div>
+                <div class="rarity-badge rarity-epico-badge">Épico</div>
+                <div class="idol-info">
+                    <div class="idol-name">Ember</div>
+                    <div class="idol-role">Main Dancer</div>
+                    <div class="idol-description">
+                        La chispa que enciende la pasión. Ember domina el arte de la danza con fuego en cada movimiento.
+                    </div>
+                    <div class="idol-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">Vocal</div>
+                            <div class="stat-value">5</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Dance</div>
+                            <div class="stat-value">10</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Rap</div>
+                            <div class="stat-value">6</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Visual</div>
+                            <div class="stat-value">7</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Legendaria -->
+            <div class="idol-card legendario">
+                <div class="idol-image">
+                    <img src="https://i.imgur.com/mA0HQNR.png" alt="Serenity - Leader" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;">
+                </div>
+                <div class="rarity-badge rarity-legendario-badge">Legendario</div>
+                <div class="idol-info">
+                    <div class="idol-name">Serenity</div>
+                    <div class="idol-role">Leader</div>
+                    <div class="idol-description">
+                        La perfección cósmica. Serenity encarna todo lo que un líder debe ser: talento, carisma y visión única.
+                    </div>
+                    <div class="idol-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">Vocal</div>
+                            <div class="stat-value">9</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Dance</div>
+                            <div class="stat-value">9</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Rap</div>
+                            <div class="stat-value">8</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Visual</div>
+                            <div class="stat-value">10</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="play-section">
+            <h2 style="font-size: 36px; margin-bottom: 20px; color: #FFD700;">🎮 ¿Listo para Reclutarlas?</h2>
+            <p style="font-size: 18px; margin-bottom: 30px; opacity: 0.9;">
+                Cada idol tiene su propia rareza y costo. ¡Construye tu grupo perfecto y conquista las listas musicales!
+            </p>
+            <a href="https://idol-agency-tycoon.netlify.app" class="play-button" target="_blank">
+                🎤 JUGAR IDOL AGENCY TYCOON
+            </a>
+        </div>
+        
+        <div class="footer">
+            <div class="back-links">
+                <a href="https://lipastudios.com" class="back-link">🏠 LIPA Studios</a>
+                <a href="https://idol-agency-tycoon.netlify.app" class="back-link" target="_blank">🎮 Jugar Juego</a>
+                <a href="https://lipastudios.com/idol-agency-tycoon.html" class="back-link">📄 Página Principal</a>
+            </div>
+            <p style="font-size: 12px; opacity: 0.6; margin-top: 20px;">
+                © 2024 LIPA Studios - Juegos HTML5 Gratuitos
+            </p>
+        </div>
+    </div>
+</body>
+</html>

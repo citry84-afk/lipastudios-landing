@@ -15,13 +15,15 @@
     
     <!-- ADSENSE -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4837743291717475" crossorigin="anonymous"></script>
+    <!-- Consent Mode v2 + Banner -->
+    <script defer src="/consent.js"></script>
     
     <!-- GOOGLE SEARCH CONSOLE -->
     <meta name="google-site-verification" content="iyEAsCuQ7tncHUvc1e09D9gDHOt0nzPQByhGu1xzq54" />
     
-    <title>LIPA Studios - 6 Juegos Neon Gratis | Stack Tower, Neon Runner WOW</title>
-    <meta name="description" content="Juegos HTML5 gratis con estética neon cyberpunk. Stack Tower, Neon Runner, Neon Beat Stage y más. Diversión garantizada.">
-    <meta name="keywords" content="juegos neon, juegos cyberpunk, stack tower, neon runner, juegos html5, juegos gratis, lipa studios">
+    <title>LIPA Studios - 8 Juegos Gratis | Idol Agency Tycoon, Stack Tower, Neon Runner WOW</title>
+    <meta name="description" content="¡El mejor juego K-pop Idol Agency Tycoon + 7 juegos neon cyberpunk! 15 idols únicas, sistema de fusión, recompensas diarias. ¡GRATIS!">
+    <meta name="keywords" content="idol agency tycoon, k-pop, idols, juegos neon, juegos cyberpunk, stack tower, neon runner, juegos html5, juegos gratis, lipa studios">
     <meta name="author" content="LIPA Studios">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://lipastudios.com">
@@ -33,15 +35,15 @@
     <link rel="apple-touch-icon" href="/icon-192.png">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="LIPA Studios - 6 Juegos Neon Gratis">
-    <meta property="og:description" content="Juegos HTML5 gratis con estética neon cyberpunk. Stack Tower, Neon Runner, Neon Beat Stage y más.">
+    <meta property="og:title" content="LIPA Studios - 7 Juegos Neon Gratis">
+    <meta property="og:description" content="Juegos HTML5 gratis con estética neon cyberpunk. Stack Tower, Neon Runner, Neon Beat WOW y más.">
     <meta property="og:image" content="https://lipastudios.com/og-image.jpg">
     <meta property="og:url" content="https://lipastudios.com">
     <meta property="og:type" content="website">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="LIPA Studios - 6 Juegos Neon Gratis">
+    <meta name="twitter:title" content="LIPA Studios - 7 Juegos Neon Gratis">
     <meta name="twitter:description" content="Juegos HTML5 gratis con estética neon cyberpunk.">
     <meta name="twitter:image" content="https://lipastudios.com/og-image.jpg">
     
@@ -101,6 +103,15 @@
                 },
                 {
                     "@type": "VideoGame",
+                    "name": "Neon Beat WOW",
+                    "description": "Guitar Hero K-pop con música original inspirada en Golden",
+                    "url": "https://neon-beat-wow.netlify.app",
+                    "genre": "Rhythm",
+                    "gamePlatform": "HTML5",
+                    "operatingSystem": "Web Browser"
+                },
+                {
+                    "@type": "VideoGame",
                     "name": "Neon Beat Stage",
                     "description": "Juego de ritmo con música K-pop y estética neon",
                     "url": "https://neon-beat-stage.netlify.app",
@@ -114,6 +125,15 @@
                     "description": "Puzzles de física que desafían tu ingenio",
                     "url": "https://neon-lab-physics.netlify.app",
                     "genre": "Puzzle",
+                    "gamePlatform": "HTML5",
+                    "operatingSystem": "Web Browser"
+                },
+                {
+                    "@type": "VideoGame",
+                    "name": "Idol Agency Tycoon",
+                    "description": "El mejor juego K-pop: construye tu imperio idol con 15 idols únicas, sistema de fusión y recompensas diarias",
+                    "url": "https://lipastudios.com/idol-agency-tycoon.html",
+                    "genre": "Simulation",
                     "gamePlatform": "HTML5",
                     "operatingSystem": "Web Browser"
                 }
@@ -297,6 +317,61 @@
             background: rgba(0,0,0,0.5);
             border: 2px solid #00ffff;
             color: white;
+        }
+        
+        /* DONATION SECTION STYLES */
+        .donation-section {
+            background: linear-gradient(135deg, rgba(255,0,255,0.15), rgba(0,255,255,0.15));
+            padding: 4rem 2rem;
+            margin: 4rem 0;
+            text-align: center;
+            border: 2px solid #ff00ff;
+            border-radius: 20px;
+        }
+        
+        .donation-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .donation-title {
+            font-size: 2.5rem;
+            color: #ffff00;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 0 20px #ffff00;
+        }
+        
+        .donation-text {
+            font-size: 1.2rem;
+            color: #ffffff;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .donate-button {
+            display: inline-block;
+            padding: 20px 40px;
+            background: linear-gradient(45deg, #ff6600, #ffff00);
+            color: #000014;
+            text-decoration: none;
+            border-radius: 15px;
+            font-weight: bold;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 30px rgba(255,102,0,0.5);
+            margin-bottom: 1rem;
+        }
+        
+        .donate-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 40px rgba(255,102,0,0.8);
+        }
+        
+        .donation-note {
+            font-size: 0.9rem;
+            color: #00ffff;
+            font-style: italic;
+        }
             border-radius: 5px;
         }
         
@@ -340,14 +415,33 @@
                 grid-template-columns: 1fr;
             }
         }
+        
+        /* Animations for Idol Agency Tycoon */
+        @keyframes legendary-glow {
+            0%, 100% { 
+                box-shadow: 0 0 20px rgba(255, 215, 0, 0.3); 
+            }
+            50% { 
+                box-shadow: 0 0 40px rgba(255, 215, 0, 0.6); 
+            }
+        }
+        
+        @keyframes badge-pulse {
+            0%, 100% { 
+                transform: scale(1); 
+            }
+            50% { 
+                transform: scale(1.05); 
+            }
+        }
     </style>
 </head>
 <body>
     <!-- HERO SECTION -->
     <section class="hero">
         <div>
-            <h1>6 Juegos Neon Para Disfrutar - LIPA Studios</h1>
-            <p class="hero-subtitle">Estética cyberpunk, diversión garantizada. Juegos HTML5 gratis con efectos visuales impresionantes</p>
+            <h1>8 Juegos Para Disfrutar - LIPA Studios</h1>
+            <p class="hero-subtitle">¡El mejor juego K-pop Idol Agency Tycoon + 7 juegos neon cyberpunk! Diversión garantizada con efectos visuales impresionantes</p>
             
             <div class="stats">
             <div class="stat">
@@ -380,10 +474,22 @@
     
     <!-- GAMES SECTION -->
     <section class="games-section">
-        <h2 class="section-title">Nuestros Juegos HTML5 Neon</h2>
-        <p class="section-subtitle">Todos gratis, todos con estética neon cyberpunk. Juegos optimizados para móvil y desktop</p>
+        <h2 class="section-title">Nuestros Juegos HTML5</h2>
+        <p class="section-subtitle">8 juegos gratis: El mejor juego K-pop Idol Agency Tycoon + 7 juegos neon cyberpunk. Optimizados para móvil y desktop</p>
         
         <div class="games-grid">
+            <div class="game-card" style="border: 3px solid #FFD700; background: linear-gradient(135deg, rgba(255,215,0,0.1), rgba(255,165,0,0.1)); animation: legendary-glow 3s ease-in-out infinite;">
+                <h3 class="game-title" style="color: #FFD700;">🎤 Idol Agency Tycoon</h3>
+                <p class="game-description">
+                    ¡EL MEJOR JUEGO K-POP! Construye tu imperio idol con 15 idols únicas, sistema de fusión, 
+                    recompensas diarias y comebacks épicos. ¡Conquista las listas musicales!
+                </p>
+                <a href="/idol-agency-tycoon.html" class="play-button" onclick="trackGameClick('idol_agency_tycoon')" style="background: linear-gradient(45deg, #FFD700, #FFA500);">
+                    🎮 JUGAR GRATIS
+                </a>
+                <div class="badge" style="background: linear-gradient(45deg, #FFD700, #FFA500); color: #333; animation: badge-pulse 2s infinite;">🏆 MEJOR JUEGO</div>
+            </div>
+            
             <div class="game-card">
                 <h3 class="game-title">Stack Tower WOW</h3>
                 <p class="game-description">
@@ -432,6 +538,30 @@
                 </div>
             
             <div class="game-card">
+                <h3 class="game-title">Neon Beat WOW</h3>
+                <p class="game-description">
+                    Guitar Hero K-pop con música original inspirada en "Golden". 
+                    Efectos visuales épicos y mecánicas de ritmo perfectas.
+                </p>
+                <a href="https://neon-beat-wow.netlify.app" class="play-button" onclick="trackGameClick('neon_beat_wow')">
+                    JUGAR AHORA
+                </a>
+                <div class="badge">K-POP</div>
+            </div>
+            
+            <div class="game-card">
+                <h3 class="game-title">Neon Lab Physics WOW</h3>
+                <p class="game-description">
+                    Física ultra realista con efectos espectaculares. Partículas con energía, 
+                    colisiones perfectas y animaciones que te dejarán sin aliento.
+                </p>
+                <a href="https://neon-lab-physics-wow.netlify.app" class="play-button" onclick="trackGameClick('neon_lab_physics_wow')">
+                    JUGAR AHORA
+                </a>
+                <div class="badge">FÍSICA REAL</div>
+            </div>
+            
+            <div class="game-card">
                 <h3 class="game-title">Neon Beat Stage</h3>
                 <p class="game-description">
                     Juego de ritmo con música K-pop. Sigue el compás y disfruta 
@@ -466,6 +596,21 @@
         </div>
     </section>
     
+    <!-- DONATION SECTION -->
+    <section class="donation-section">
+        <div class="donation-container">
+            <h2 class="donation-title">💝 ¡Apoya la creación de juegos indie!</h2>
+            <p class="donation-text">
+                Cada donación nos motiva a crear más juegos épicos y mejorar los existentes. 
+                ¡Únete a nuestra comunidad de supporters!
+            </p>
+            <a href="https://paypal.me/lipastudios" target="_blank" class="donate-button" onclick="trackDonationClick()">
+                ☕ ¡Apoya el desarrollo!
+            </a>
+            <p class="donation-note">Tu apoyo nos ayuda a seguir creando juegos gratis para todos</p>
+        </div>
+    </section>
+    
     <!-- FINAL CTA -->
     <section class="final-cta">
         <h2 class="cta-title">¿Cuál será tu favorito?</h2>
@@ -496,6 +641,13 @@
             });
         }
         
+        function trackDonationClick() {
+            gtag('event', 'donation_click', {
+                source: 'landing_page',
+                value: 1
+            });
+        }
+        
         // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -511,5 +663,14 @@
             page_title: 'LIPA Studios Landing'
         });
     </script>
+    <!-- Footer Navigation -->
+    <div style="position: fixed; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.85); padding: 10px; text-align: center; font-size: 12px; z-index: 1000;">
+        <a href="/privacy.html" style="color:#00ffff; margin:0 10px;">Privacidad</a>
+        <a href="/terms.html" style="color:#00ffff; margin:0 10px;">Términos</a>
+        <a href="/contact.html" style="color:#00ffff; margin:0 10px;">Contacto</a>
+        <a href="/about.html" style="color:#00ffff; margin:0 10px;">Sobre Nosotros</a>
+        <a href="/help.html" style="color:#00ffff; margin:0 10px;">Ayuda</a>
+        <a href="/news.html" style="color:#00ffff; margin:0 10px;">Noticias</a>
+    </div>
 </body>
 </html>
