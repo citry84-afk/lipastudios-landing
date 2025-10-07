@@ -68,7 +68,7 @@
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
-    Content-Security-Policy = "default-src 'self' 'unsafe-inline' 'unsafe-eval' *.google.com *.googlesyndication.com *.googletagmanager.com *.gstatic.com fpyf8.com *.monetag.com data: blob: *; img-src 'self' 'unsafe-inline' data: blob: * *.google.com *.googlesyndication.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' *.google.com *.googlesyndication.com *.googletagmanager.com *.gstatic.com *.adtrafficquality.google fpyf8.com *.monetag.com; style-src 'self' 'unsafe-inline' *.googleapis.com; font-src 'self' *.googleapis.com *.gstatic.com data:; connect-src 'self' *.google.com *.googlesyndication.com *.googletagmanager.com *.google-analytics.com region1.google-analytics.com *.adtrafficquality.google fpyf8.com *.monetag.com; frame-src 'self' *.google.com *.googlesyndication.com *.adtrafficquality.google fpyf8.com *.monetag.com;"
+    Content-Security-Policy = "default-src 'self' *; script-src 'self' 'unsafe-inline' 'unsafe-eval' * blob: data:; connect-src 'self' * blob:; frame-src 'self' *; style-src 'self' 'unsafe-inline' *; img-src 'self' data: blob: *; font-src 'self' data: *;"
 
 # Redirects for SEO
 [[redirects]]
