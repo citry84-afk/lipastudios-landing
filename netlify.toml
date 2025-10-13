@@ -44,21 +44,8 @@
     Content-Type = "application/xml"
     Cache-Control = "public, max-age=86400"
 
-# Gzip compression
-[[headers]]
-  for = "*.html"
-  [headers.values]
-    Content-Encoding = "gzip"
-
-[[headers]]
-  for = "*.js"
-  [headers.values]
-    Content-Encoding = "gzip"
-
-[[headers]]
-  for = "*.css"
-  [headers.values]
-    Content-Encoding = "gzip"
+# Gzip compression is handled automatically by Netlify
+# DO NOT set Content-Encoding header manually
 
 # Security headers for monetization
 [[headers]]
@@ -81,9 +68,9 @@
   to = "/#games"
   status = 301
 
-# SPA routing for PWA
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+# SPA routing disabled - we have a blog with real HTML pages
+# [[redirects]]
+#   from = "/*"
+#   to = "/index.html"
+#   status = 200
 
