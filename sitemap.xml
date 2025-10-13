@@ -26,6 +26,20 @@
     
     <!-- Blog Articles -->
     <url>
+        <loc>https://lipastudios.com/blog/setup-gaming-aesthetic-2025.html</loc>
+        <lastmod>2024-10-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <news:news>
+            <news:publication>
+                <news:name>LIPA Studios Blog</news:name>
+                <news:language>es</news:language>
+            </news:publication>
+            <news:publication_date>2024-10-13</news:publication_date>
+            <news:title>Setup Gaming Aesthetic 2025: 3 Presupuestos Completos</news:title>
+        </news:news>
+    </url>
+    <url>
         <loc>https://lipastudios.com/blog/mejores-sillas-gaming-2025.html</loc>
         <lastmod>2024-10-13</lastmod>
         <changefreq>monthly</changefreq>
