@@ -11,6 +11,9 @@ Crawl-delay: 1
 Disallow: /admin/
 Disallow: /private/
 
+# Allow blog and content pages
+Allow: /blog/
+
 # Allow all game pages
 Allow: /stack-tower-wow/
 Allow: /neon-runner-wow/

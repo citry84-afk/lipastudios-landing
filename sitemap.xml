@@ -2,26 +2,132 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+    
+    <!-- Página Principal -->
     <url>
         <loc>https://lipastudios.com/</loc>
-        <lastmod>2024-01-15</lastmod>
-        <changefreq>weekly</changefreq>
+        <lastmod>2024-10-13</lastmod>
+        <changefreq>daily</changefreq>
         <priority>1.0</priority>
         <image:image>
             <image:loc>https://lipastudios.com/og-image.jpg</image:loc>
-            <image:title>LIPA Studios - Juegos Neon</image:title>
+            <image:title>LIPA Studios - 12 Juegos Neon Gratis</image:title>
             <image:caption>Juegos HTML5 gratis con estética neon cyberpunk</image:caption>
         </image:image>
     </url>
+    
+    <!-- Blog Index -->
     <url>
-        <loc>https://stack-tower-wow.netlify.app/</loc>
-        <lastmod>2024-09-25</lastmod>
+        <loc>https://lipastudios.com/blog/</loc>
+        <lastmod>2024-10-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
+    
+    <!-- Blog Articles -->
     <url>
-        <loc>https://neon-runner-wow.netlify.app/</loc>
-        <lastmod>2024-09-25</lastmod>
+        <loc>https://lipastudios.com/blog/crear-juegos-html5.html</loc>
+        <lastmod>2024-10-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lipastudios.com/blog/estrategias-stack-tower.html</loc>
+        <lastmod>2024-10-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lipastudios.com/blog/historia-idol-tycoon.html</loc>
+        <lastmod>2024-10-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lipastudios.com/blog/guia-neon-runner.html</loc>
+        <lastmod>2024-10-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lipastudios.com/blog/estetica-cyberpunk.html</loc>
+        <lastmod>2024-10-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lipastudios.com/blog/optimizar-juegos-web.html</loc>
+        <lastmod>2024-10-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lipastudios.com/blog/kpop-videojuegos.html</loc>
+        <lastmod>2024-10-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lipastudios.com/blog/trucos-neon-beat.html</loc>
+        <lastmod>2024-10-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lipastudios.com/blog/historia-juegos-casuales.html</loc>
+        <lastmod>2024-10-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lipastudios.com/blog/fisica-juegos-web.html</loc>
+        <lastmod>2024-10-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Páginas Principales -->
+    <url>
+        <loc>https://lipastudios.com/about.html</loc>
+        <lastmod>2024-10-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://lipastudios.com/contact.html</loc>
+        <lastmod>2024-09-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://lipastudios.com/help.html</loc>
+        <lastmod>2024-09-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://lipastudios.com/news.html</loc>
+        <lastmod>2024-09-28</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://lipastudios.com/privacy.html</loc>
+        <lastmod>2024-09-28</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    <url>
+        <loc>https://lipastudios.com/terms.html</loc>
+        <lastmod>2024-09-28</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    
+    <!-- Juegos Externos -->
+    <url>
+        <loc>https://lipastudios.com/idol-agency-tycoon.html</loc>
+        <lastmod>2024-10-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
@@ -32,33 +138,23 @@
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://neon-runner.netlify.app/</loc>
+        <loc>https://runnerwow.netlify.app/</loc>
         <lastmod>2024-09-25</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://neon-beat-stage.netlify.app/</loc>
-        <lastmod>2024-09-25</lastmod>
+        <loc>https://neonconnections.netlify.app/</loc>
+        <lastmod>2024-10-10</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://neon-beat-wow.netlify.app/</loc>
-        <lastmod>2024-09-25</lastmod>
+        <loc>https://jade-squirrel-78cc63.netlify.app/</loc>
+        <lastmod>2024-10-05</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
-    <url>
-        <loc>https://neon-lab-physics.netlify.app/</loc>
-        <lastmod>2024-09-25</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://neon-corp-manager.netlify.app/</loc>
-        <lastmod>2024-09-25</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
+    
 </urlset>
+
