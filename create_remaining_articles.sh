@@ -1,0 +1,197 @@
+#!/bin/bash
+
+# Artículo 5: Estética Cyberpunk
+cat > blog/estetica-cyberpunk.html << 'EOF'
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Estética Cyberpunk en Videojuegos: Guía Visual Completa 2024</title>
+<meta name="description" content="Análisis profundo del diseño neon, paletas de color, tipografías y efectos visuales que definen el cyberpunk en gaming moderno.">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-633RQLC6T0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-633RQLC6T0');</script>
+<style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Segoe UI',sans-serif;background:linear-gradient(135deg,#0a0a0a 0%,#1a0a2e 50%,#0a0a0a 100%);color:#e0e0e0;line-height:1.8}.header-nav{background:rgba(0,0,0,.9);padding:15px 0;position:sticky;top:0;z-index:100;border-bottom:2px solid #ff00ff}.nav-container{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center}.logo{font-size:1.5em;font-weight:bold;background:linear-gradient(45deg,#00f5ff,#ff00ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}.nav-links{display:flex;gap:30px}.nav-links a{color:#00f5ff;text-decoration:none}.article-header{max-width:900px;margin:60px auto;padding:0 20px}.breadcrumb{color:#666;margin-bottom:20px;font-size:.9em}.breadcrumb a{color:#00f5ff;text-decoration:none}.article-category{color:#ff00ff;font-size:.9em;font-weight:bold;text-transform:uppercase;margin-bottom:15px}.article-title{font-size:3em;background:linear-gradient(45deg,#ff00ff,#00f5ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:20px;line-height:1.2}.article-meta{display:flex;gap:30px;color:#888;margin-bottom:40px;padding-bottom:30px;border-bottom:2px solid rgba(255,0,255,.2)}.article-content{max-width:900px;margin:0 auto;padding:0 20px}.article-content h2{color:#ff00ff;font-size:2em;margin-top:50px;margin-bottom:20px}.article-content h3{color:#00f5ff;font-size:1.5em;margin-top:35px;margin-bottom:15px}.article-content p{margin-bottom:20px;font-size:1.1em;line-height:1.9}.article-content ul{margin-left:30px;margin-bottom:25px}.article-content li{margin-bottom:12px;line-height:1.7}.color-palette{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:15px;margin:30px 0}.color-box{height:100px;border-radius:10px;display:flex;align-items:flex-end;padding:10px;font-size:.9em;font-weight:bold}.highlight-box{background:rgba(255,0,255,.1);border-left:4px solid #ff00ff;padding:25px;margin:30px 0;border-radius:8px}.back-to-blog{display:inline-block;color:#ff00ff;text-decoration:none;margin:40px 0 20px;padding:12px 25px;border:2px solid #ff00ff;border-radius:8px}@media(max-width:768px){.article-title{font-size:2em}.color-palette{grid-template-columns:repeat(2,1fr)}.nav-links{display:none}}</style>
+</head>
+<body>
+<nav class="header-nav">
+<div class="nav-container">
+<div class="logo">LIPA STUDIOS</div>
+<div class="nav-links">
+<a href="/">Inicio</a>
+<a href="/blog/">Blog</a>
+<a href="/about.html">Nosotros</a>
+</div>
+</div>
+</nav>
+<article class="article-header">
+<div class="breadcrumb"><a href="/">Inicio</a> / <a href="/blog/">Blog</a> / Estética Cyberpunk</div>
+<div class="article-category">🌆 Diseño Visual</div>
+<h1 class="article-title">Estética Cyberpunk en Videojuegos: Guía Visual Completa</h1>
+<div class="article-meta">
+<span>📅 9 de Octubre, 2024</span>
+<span>⏱️ 11 minutos</span>
+<span>🎨 Diseño</span>
+</div>
+</article>
+<div class="article-content">
+<p><strong>El cyberpunk no es solo una estética, es una filosofía de diseño.</strong> Desde Blade Runner hasta nuestros juegos neon, la estética cyberpunk ha definido cómo visualizamos el futuro distópico. Pero ¿qué hace que un diseño sea genuinamente cyberpunk vs simplemente "colores brillantes"?</p>
+<p>Después de crear 11 juegos con estética neon cyberpunk, hemos aprendido los principios que separan el cyberpunk auténtico del "aesthetic washing". Esta guía te revelará todo.</p>
+<div class="highlight-box">
+<strong>🎨 Dominarás:</strong>
+<ul style="margin-top:15px">
+<li>Paletas de color cyberpunk: teoría y aplicación</li>
+<li>Tipografías que definen el género</li>
+<li>Efectos visuales neon: glow, blur, chromatic aberration</li>
+<li>Grid systems y composición cyberpunk</li>
+<li>Casos de estudio: análisis de juegos icónicos</li>
+</ul>
+</div>
+<h2>🎨 La Paleta de Color Definitiva</h2>
+<p>El cyberpunk no es "usar todos los colores neón". Tiene una ciencia detrás. La paleta core se basa en contrastes extremos y colores saturados contra fondos oscuros:</p>
+<h3>Colores Primarios Cyberpunk</h3>
+<div class="color-palette">
+<div class="color-box" style="background:#00f5ff">#00f5ff<br>Cyan Neón</div>
+<div class="color-box" style="background:#ff00ff">#ff00ff<br>Magenta Puro</div>
+<div class="color-box" style="background:#39ff14">#39ff14<br>Verde Ácido</div>
+<div class="color-box" style="background:#ff0080">#ff0080<br>Rosa Choque</div>
+<div class="color-box" style="background:#ffff00">#ffff00<br>Amarillo Eléctrico</div>
+<div class="color-box" style="background:#8a2be2">#8a2be2<br>Violeta Profundo</div>
+</div>
+<h3>Colores de Fondo</h3>
+<div class="color-palette">
+<div class="color-box" style="background:#0a0a0a;color:#fff">#0a0a0a<br>Negro Profundo</div>
+<div class="color-box" style="background:#1a0a2e;color:#fff">#1a0a2e<br>Violeta Oscuro</div>
+<div class="color-box" style="background:#0d1117;color:#fff">#0d1117<br>Gris Carbón</div>
+<div class="color-box" style="background:#1a1a2e;color:#fff">#1a1a2e<br>Azul Nocturno</div>
+</div>
+<p><strong>Regla de oro:</strong> 80% tonos oscuros (#000-#333), 20% colores neón saturados. El contraste es lo que crea el efecto "glow" característico.</p>
+<h2>✨ Efectos Visuales Esenciales</h2>
+<h3>1. Glow Neón (El Rey del Cyberpunk)</h3>
+<p>El efecto glow no es simplemente "blur". Es una combinación de:</p>
+<ul>
+<li><strong>Box-shadow múltiple:</strong> 3-5 capas con blur incremental (5px, 10px, 20px, 40px)</li>
+<li><strong>Color spreading:</strong> Cada capa más clara que la anterior</li>
+<li><strong>Opacity decay:</strong> Capas externas con opacity reducida (0.8, 0.6, 0.4, 0.2)</li>
+</ul>
+<p><strong>Código CSS ejemplo:</strong></p>
+<code style="display:block;background:rgba(0,0,0,0.5);padding:20px;border-radius:8px;margin:20px 0">
+box-shadow: 0 0 5px #00f5ff,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;0 0 10px #00f5ff,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;0 0 20px #00f5ff,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;0 0 40px #00f5ff;
+</code>
+<h3>2. Chromatic Aberration</h3>
+<p>El efecto de "separación de colores RGB" que simula glitches. Común en elementos de UI y textos importantes:</p>
+<ul>
+<li>Crea 3 copias del elemento</li>
+<li>Desplaza cada una 2-3px en direcciones opuestas</li>
+<li>Aplica filtros: rojo, verde, azul</li>
+<li>Blend mode: screen o lighten</li>
+</ul>
+<h3>3. Scanlines</h3>
+<p>Líneas horizontales que simulan pantallas CRT. Añaden textura sin ser invasivas:</p>
+<ul>
+<li>Gradiente linear repetido cada 4px</li>
+<li>Opacity muy baja (0.03-0.05)</li>
+<li>Color: negro o color complementario</li>
+</ul>
+<h2>🔤 Tipografías del Futuro</h2>
+<p>La tipografía define el 50% del feel cyberpunk. Las mejores opciones:</p>
+<h3>Para Títulos y Headers</h3>
+<ul>
+<li><strong>Orbitron:</strong> Geométrica, futurista, legible. Nuestra #1 choice.</li>
+<li><strong>Audiowide:</strong> Bold, electrónica, impacto visual.</li>
+<li><strong>Rajdhani:</strong> Angular, técnica, versatile.</li>
+<li><strong>Saira Condensed:</strong> Condensada, moderna, eficiente para UI.</li>
+</ul>
+<h3>Para Body Text</h3>
+<ul>
+<li><strong>Roboto Mono:</strong> Monospace, clean, alta legibilidad.</li>
+<li><strong>Share Tech Mono:</strong> Similar a Roboto pero más característica.</li>
+<li><strong>IBM Plex Mono:</strong> Profesional, clara, bien espaciada.</li>
+</ul>
+<p><strong>Regla critical:</strong> MAX 2 tipografías por diseño. Una para headers, una para body. Más es caótico, no cyberpunk.</p>
+<h2>📐 Grid Systems y Composición</h2>
+<p>El cyberpunk love los grids. Representan orden en el caos, tecnología en lo humano:</p>
+<h3>Elementos Grid Típicos</h3>
+<ul>
+<li><strong>Diagonal lines:</strong> 45° o 30°, cruzan la composición</li>
+<li><strong>Corner brackets:</strong> "[  ]" en esquinas de frames</li>
+<li><strong>Data readouts:</strong> Números, códigos, fake terminal text</li>
+<li><strong>Wireframe overlays:</strong> Grillas transparentes sobre elementos</li>
+<li><strong>HUD elements:</strong> Indicadores tipo videojuego, stats, barras</li>
+</ul>
+<h2>🎮 Casos de Estudio: Análisis de Juegos Icónicos</h2>
+<h3>Caso 1: Nuestros Juegos LIPA Studios</h3>
+<p><strong>Stack Tower Neon:</strong></p>
+<ul>
+<li>Paleta: Cyan (#00f5ff) + Magenta (#ff00ff) sobre negro (#0a0a0a)</li>
+<li>Tipografía: Orbitron para títulos, Segoe UI para UI</li>
+<li>Efectos: Glow intenso en bloques, partículas con trail effect</li>
+<li>Grid: Líneas diagonales sutiles en background</li>
+</ul>
+<p><strong>Neon Runner WOW:</strong></p>
+<ul>
+<li>Paleta: Verde ácido (#39ff14) + Cyan + fondos degradados oscuros</li>
+<li>Efectos: Motion blur en alta velocidad, chromatic aberration en UI</li>
+<li>Composición: Perspectiva isométrica típica de juegos retro-futuristas</li>
+</ul>
+<h3>Caso 2: Cyberpunk 2077 (Referencia Industria)</h3>
+<ul>
+<li>Amarillo (#ffff00) como color signature (diferenciador)</li>
+<li>Glitch effects everywhere (parte de la narrativa)</li>
+<li>Mix de japonés + inglés en signage (multiculturalismo)</li>
+<li>Hologramas con transparency + glow</li>
+</ul>
+<h3>Caso 3: Valorant (Cyberpunk Minimalista)</h3>
+<ul>
+<li>Rojo (#ff4654) + Cian clean</li>
+<li>Menos es más: selectivo con neones</li>
+<li>Angular shapes > curvas</li>
+<li>UI ultra funcional con toques cyberpunk sutiles</li>
+</ul>
+<h2>🛠️ Herramientas de Diseño Cyberpunk</h2>
+<p>Para crear tus propios diseños cyberpunk:</p>
+<ul>
+<li><strong>Coolors.co:</strong> Generador de paletas, filtra por "neon" o "cyberpunk"</li>
+<li><strong>Google Fonts:</strong> Todas las fuentes mencionadas, gratis</li>
+<li><strong>CSS Neon Generator:</strong> crea box-shadows automáticamente</li>
+<li><strong>Photopea:</strong> Photoshop online gratis, perfecto para mockups</li>
+<li><strong>Figma:</strong> Diseño de UI, plugins de glow effects</li>
+</ul>
+<h2>❌ Errores Comunes a Evitar</h2>
+<ol>
+<li><strong>Demasiados colores neón:</strong> Usa 2-3 colores primarios max. Más es ruido visual.</li>
+<li><strong>Glow excesivo:</strong> Si todo brilla, nada brilla. Prioriza elementos clave.</li>
+<li><strong>Legibilidad sacrificada:</strong> El texto debe ser SIEMPRE legible. Estética nunca sobre UX.</li>
+<li><strong>Sin contraste:</strong> Neon sobre neon no funciona. Necesitas fondos oscuros.</li>
+<li><strong>Tipografías random:</strong> Comic Sans nunca será cyberpunk, no importa el color.</li>
+</ol>
+<h2>🔮 El Futuro del Cyberpunk Visual</h2>
+<p>Tendencias emergentes 2024-2025:</p>
+<ul>
+<li><strong>Neo-cyberpunk:</strong> Menos saturado, más sofisticado</li>
+<li><strong>Biopunk fusion:</strong> Elementos orgánicos + tech</li>
+<li><strong>Solarpunk crossover:</strong> Cyberpunk + naturaleza</li>
+<li><strong>3D neon:</strong> Elementos 3D con shaders neon realtime</li>
+<li><strong>AI-generated textures:</strong> Fondos procedurales únicos</li>
+</ul>
+<p style="margin-top:50px;padding-top:30px;border-top:2px solid rgba(255,0,255,.2)"><em>La estética cyberpunk es democrática: no necesitas presupuesto millonario, solo entender los principios. Colores correctos + efectos adecuados + composición inteligente = cyberpunk auténtico.</em></p>
+<div class="highlight-box">
+<strong>📚 Recursos adicionales:</strong>
+<ul style="margin-top:15px">
+<li><a href="/blog/crear-juegos-html5.html" style="color:#ff00ff">Crear Juegos HTML5</a></li>
+<li><a href="/blog/optimizar-juegos-web.html" style="color:#ff00ff">Optimización Web</a></li>
+<li><a href="/" style="color:#ff00ff">Ver Nuestros Juegos Cyberpunk</a></li>
+</ul>
+</div>
+<a href="/blog/" class="back-to-blog">← Volver al Blog</a>
+</div>
+<script>gtag('event','article_view',{article_title:'Estética Cyberpunk',article_category:'Diseño'});</script>
+</body>
+</html>
+EOF
+
+echo "✅ Artículo 5 (Estética Cyberpunk) creado"
+

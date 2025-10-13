@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Física Realista en Juegos Web: Caso Neon Lab Physics | Guía Técnica</title>
+<meta name="description" content="Cómo implementamos física ultra realista con JavaScript: colisiones, gravedad, rebotes y partículas. Detrás de escenas de Neon Lab Physics WOW.">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-633RQLC6T0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-633RQLC6T0');</script>
+<style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Segoe UI',sans-serif;background:linear-gradient(135deg,#0a0a0a 0%,#1a0a2e 50%,#0a0a0a 100%);color:#e0e0e0;line-height:1.8}.header-nav{background:rgba(0,0,0,.9);padding:15px 0;position:sticky;top:0;z-index:100;border-bottom:2px solid #00f5ff}.nav-container{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center}.logo{font-size:1.5em;font-weight:bold;background:linear-gradient(45deg,#00f5ff,#ff00ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}.nav-links{display:flex;gap:30px}.nav-links a{color:#00f5ff;text-decoration:none}.article-header{max-width:900px;margin:60px auto;padding:0 20px}.breadcrumb{color:#666;margin-bottom:20px;font-size:.9em}.breadcrumb a{color:#00f5ff;text-decoration:none}.article-category{color:#00f5ff;font-size:.9em;font-weight:bold;text-transform:uppercase;margin-bottom:15px}.article-title{font-size:3em;background:linear-gradient(45deg,#00f5ff,#39ff14);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:20px;line-height:1.2}.article-meta{display:flex;gap:30px;color:#888;margin-bottom:40px;padding-bottom:30px;border-bottom:2px solid rgba(0,245,255,.2)}.article-content{max-width:900px;margin:0 auto;padding:0 20px}.article-content h2{color:#00f5ff;font-size:2em;margin-top:50px;margin-bottom:20px}.article-content h3{color:#39ff14;font-size:1.5em;margin-top:35px;margin-bottom:15px}.article-content p{margin-bottom:20px;font-size:1.1em;line-height:1.9}.article-content ul{margin-left:30px;margin-bottom:25px}.article-content li{margin-bottom:12px;line-height:1.7}.code-block{background:rgba(0,0,0,.5);border-left:4px solid #00f5ff;padding:20px;margin:25px 0;border-radius:8px;overflow-x:auto;font-family:monospace;font-size:.95em}code{color:#39ff14}.highlight-box{background:rgba(0,245,255,.1);border-left:4px solid #00f5ff;padding:25px;margin:30px 0;border-radius:8px}.physics-concept{background:rgba(0,0,0,.3);border:2px solid rgba(57,255,20,.3);border-radius:15px;padding:25px;margin:25px 0}.physics-concept h4{color:#39ff14;margin-bottom:15px}.formula{background:rgba(0,0,0,.7);padding:15px;border-radius:8px;font-family:monospace;color:#00f5ff;margin:15px 0;text-align:center;font-size:1.1em}.back-to-blog{display:inline-block;color:#00f5ff;text-decoration:none;margin:40px 0 20px;padding:12px 25px;border:2px solid #00f5ff;border-radius:8px}@media(max-width:768px){.article-title{font-size:2em}.nav-links{display:none}}</style>
+</head>
+<body>
+<nav class="header-nav">
+<div class="nav-container">
+<div class="logo">LIPA STUDIOS</div>
+<div class="nav-links">
+<a href="/">Inicio</a>
+<a href="/blog/">Blog</a>
+<a href="/about.html">Nosotros</a>
+</div>
+</div>
+</nav>
+<article class="article-header">
+<div class="breadcrumb"><a href="/">Inicio</a> / <a href="/blog/">Blog</a> / Física en Juegos Web</div>
+<div class="article-category">🔬 Desarrollo Técnico</div>
+<h1 class="article-title">Física Realista en Juegos Web: Caso Neon Lab Physics</h1>
+<div class="article-meta">
+<span>📅 4 de Octubre, 2024</span>
+<span>⏱️ 11 minutos</span>
+<span>🧪 Técnico</span>
+</div>
+</article>
+<div class="article-content">
+<p><strong>¿Física realista en JavaScript? Sí, es posible.</strong> Cuando decidimos crear Neon Lab Physics WOW, el desafío era claro: simular física de partículas ultra realista usando solo Vanilla JavaScript, sin engines pesados como Matter.js o Box2D.</p>
+<p>El resultado: un simulador que corre a 60 FPS con 500+ partículas simultáneas, colisiones precisas y efectos visuales espectaculares. Esta es la historia técnica completa.</p>
+<div class="highlight-box">
+<strong>⚡ En esta guía técnica:</strong>
+<ul style="margin-top:15px">
+<li>Fundamentos de física para juegos: Newton en código</li>
+<li>Sistema de colisiones eficiente (Quadtree spatial indexing)</li>
+<li>Gravedad, fricción y rebotes realistas</li>
+<li>Particle system optimizado (60 FPS con 1000+ particles)</li>
+<li>Trucos de performance críticos</li>
+</ul>
+</div>
+<h2>🌍 Fundamentos: Las 3 Leyes de Newton en JavaScript</h2>
+<p>Toda física de juegos se reduce a las leyes de Newton. Así las implementamos:</p>
+<div class="physics-concept">
+<h4>Primera Ley: Inercia</h4>
+<p><em>"Un objeto en movimiento permanece en movimiento a menos que una fuerza actúe sobre él"</em></p>
+<div class="formula">
+velocity.x += acceleration.x * deltaTime;<br>
+velocity.y += acceleration.y * deltaTime;<br>
+position.x += velocity.x * deltaTime;<br>
+position.y += velocity.y * deltaTime;
+</div>
+<p><strong>En práctica:</strong> Cada frame, actualizamos velocidad basado en aceleración, luego posición basada en velocidad. deltaTime es crítico para consistencia cross-device.</p>
+</div>
+<div class="physics-concept">
+<h4>Segunda Ley: F = ma</h4>
+<p><em>"Fuerza = Masa × Aceleración"</em></p>
+<div class="formula">
+acceleration = force / mass;
+</div>
+<p><strong>Implementación:</strong></p>
+<div class="code-block">
+<code>
+function applyForce(body, force) {<br>
+&nbsp;&nbsp;const ax = force.x / body.mass;<br>
+&nbsp;&nbsp;const ay = force.y / body.mass;<br>
+&nbsp;&nbsp;body.acceleration.x += ax;<br>
+&nbsp;&nbsp;body.acceleration.y += ay;<br>
+}
+</code>
+</div>
+<p>Objetos pesados (high mass) se mueven menos con la misma fuerza. Realismo instant.</p>
+</div>
+<div class="physics-concept">
+<h4>Tercera Ley: Acción-Reacción</h4>
+<p><em>"Para cada acción hay una reacción igual y opuesta"</em></p>
+<p><strong>En colisiones:</strong></p>
+<div class="code-block">
+<code>
+// Cuando A golpea B:<br>
+A.velocity.x = -A.velocity.x * restitution;<br>
+B.velocity.x = -B.velocity.x * restitution;<br>
+// Ambos rebotan en direcciones opuestas
+</code>
+</div>
+</div>
+<h2>⚙️ Sistema de Colisiones: El Verdadero Desafío</h2>
+<p>El algoritmo naive de colisiones es O(n²): comparar cada objeto con todos los demás. Con 500 partículas = 250,000 comparaciones por frame. Imposible a 60 FPS.</p>
+<h3>Solución: Quadtree Spatial Indexing</h3>
+<p>Dividimos el espacio en cuadrantes. Solo comparamos objetos en el mismo cuadrante o vecinos.</p>
+<div class="code-block">
+<code>
+class Quadtree {<br>
+&nbsp;&nbsp;constructor(bounds, capacity = 4) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;this.bounds = bounds; // {x, y, width, height}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;this.capacity = capacity;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;this.objects = [];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;this.divided = false;<br>
+&nbsp;&nbsp;}<br><br>
+&nbsp;&nbsp;insert(object) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if (!this.bounds.contains(object)) return false;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if (this.objects.length < this.capacity) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.objects.push(object);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return true;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;if (!this.divided) this.subdivide();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return (this.northeast.insert(object) ||<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.northwest.insert(object) ||<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.southeast.insert(object) ||<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.southwest.insert(object));<br>
+&nbsp;&nbsp;}<br><br>
+&nbsp;&nbsp;subdivide() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;// Divide en 4 cuadrantes<br>
+&nbsp;&nbsp;&nbsp;&nbsp;const {x, y, width, height} = this.bounds;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;const hw = width / 2, hh = height / 2;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;this.northeast = new Quadtree({x: x+hw, y, width: hw, height: hh});<br>
+&nbsp;&nbsp;&nbsp;&nbsp;this.northwest = new Quadtree({x, y, width: hw, height: hh});<br>
+&nbsp;&nbsp;&nbsp;&nbsp;this.southeast = new Quadtree({x: x+hw, y: y+hh, width: hw, height: hh});<br>
+&nbsp;&nbsp;&nbsp;&nbsp;this.southwest = new Quadtree({x, y: y+hh, width: hw, height: hh});<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;this.divided = true;<br>
+&nbsp;&nbsp;}<br>
+}
+</code>
+</div>
+<p><strong>Resultado:</strong> Reducción de O(n²) a O(n log n). Con 500 partículas: de 250K comparaciones a ~4,500. <strong>98% más rápido</strong>.</p>
+<h2>🎱 Colisiones Circulares: Matemática Precisa</h2>
+<p>En Neon Lab Physics, todas las partículas son círculos. Detectar colisión círculo-círculo es simple pero requiere precisión:</p>
+<div class="code-block">
+<code>
+function checkCircleCollision(a, b) {<br>
+&nbsp;&nbsp;const dx = b.x - a.x;<br>
+&nbsp;&nbsp;const dy = b.y - a.y;<br>
+&nbsp;&nbsp;const distance = Math.sqrt(dx*dx + dy*dy);<br>
+&nbsp;&nbsp;const minDist = a.radius + b.radius;<br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;if (distance < minDist) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;// Colisión detectada<br>
+&nbsp;&nbsp;&nbsp;&nbsp;resolveCollision(a, b, distance, dx, dy);<br>
+&nbsp;&nbsp;}<br>
+}
+</code>
+</div>
+<h3>Resolución de Colisión (El Truco Crítico)</h3>
+<p>No basta detectar, hay que resolver: separar objetos + transferir momentum.</p>
+<div class="code-block">
+<code>
+function resolveCollision(a, b, distance, dx, dy) {<br>
+&nbsp;&nbsp;// 1. Separar objetos (evita overlap)<br>
+&nbsp;&nbsp;const overlap = (a.radius + b.radius) - distance;<br>
+&nbsp;&nbsp;const nx = dx / distance; // normal x<br>
+&nbsp;&nbsp;const ny = dy / distance; // normal y<br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;a.x -= nx * overlap * 0.5;<br>
+&nbsp;&nbsp;a.y -= ny * overlap * 0.5;<br>
+&nbsp;&nbsp;b.x += nx * overlap * 0.5;<br>
+&nbsp;&nbsp;b.y += ny * overlap * 0.5;<br><br>
+&nbsp;&nbsp;// 2. Transferir momentum<br>
+&nbsp;&nbsp;const relVelX = b.vx - a.vx;<br>
+&nbsp;&nbsp;const relVelY = b.vy - a.vy;<br>
+&nbsp;&nbsp;const dotProduct = relVelX * nx + relVelY * ny;<br><br>
+&nbsp;&nbsp;// Solo resolver si se acercan (no si ya se alejan)<br>
+&nbsp;&nbsp;if (dotProduct < 0) return;<br><br>
+&nbsp;&nbsp;const restitution = 0.8; // bounciness<br>
+&nbsp;&nbsp;const impulse = (2 * dotProduct) / (a.mass + b.mass);<br><br>
+&nbsp;&nbsp;a.vx += impulse * b.mass * nx * restitution;<br>
+&nbsp;&nbsp;a.vy += impulse * b.mass * ny * restitution;<br>
+&nbsp;&nbsp;b.vx -= impulse * a.mass * nx * restitution;<br>
+&nbsp;&nbsp;b.vy -= impulse * a.mass * ny * restitution;<br>
+}
+</code>
+</div>
+<p><strong>Pro tip:</strong> <code>restitution</code> controla "bounciness". 1.0 = rebote perfecto (energía conservada), 0.0 = sin rebote (energía absorbida).</p>
+<h2>🌊 Gravedad & Fuerzas Ambientales</h2>
+<p>Gravedad es simplemente aceleración constante hacia abajo:</p>
+<div class="code-block">
+<code>
+const GRAVITY = 9.8; // m/s² (Earth-like)<br>
+const PIXEL_TO_METER = 100; // 100px = 1 metro<br><br>
+function applyGravity(particle, deltaTime) {<br>
+&nbsp;&nbsp;const gravityForce = GRAVITY / PIXEL_TO_METER;<br>
+&nbsp;&nbsp;particle.vy += gravityForce * deltaTime * 60; // 60 FPS normalize<br>
+}
+</code>
+</div>
+<h3>Friction (Air Resistance)</h3>
+<p>Sin fricción, los objetos nunca paran. Añadimos damping:</p>
+<div class="code-block">
+<code>
+const AIR_RESISTANCE = 0.995; // 0.5% de velocidad perdida por frame<br><br>
+particle.vx *= AIR_RESISTANCE;<br>
+particle.vy *= AIR_RESISTANCE;
+</code>
+</div>
+<h3>Paredes & Límites</h3>
+<p>Cuando una partícula golpea una pared, invertimos velocidad:</p>
+<div class="code-block">
+<code>
+if (particle.x - particle.radius < 0) {<br>
+&nbsp;&nbsp;particle.x = particle.radius;<br>
+&nbsp;&nbsp;particle.vx = -particle.vx * WALL_RESTITUTION;<br>
+}<br>
+if (particle.x + particle.radius > canvas.width) {<br>
+&nbsp;&nbsp;particle.x = canvas.width - particle.radius;<br>
+&nbsp;&nbsp;particle.vx = -particle.vx * WALL_RESTITUTION;<br>
+}<br>
+// Mismo para y-axis
+</code>
+</div>
+<h2>✨ Particle System: 1000+ Partículas a 60 FPS</h2>
+<p>Neon Lab Physics puede simular 1000+ partículas simultáneamente. El secreto: object pooling + dirty checking.</p>
+<h3>Object Pooling</h3>
+<p>No crear/destruir objetos cada frame. Reutilizar:</p>
+<div class="code-block">
+<code>
+const particlePool = [];<br>
+const activeParticles = [];<br><br>
+function spawnParticle(x, y) {<br>
+&nbsp;&nbsp;let p = particlePool.pop() || new Particle();<br>
+&nbsp;&nbsp;p.reset(x, y);<br>
+&nbsp;&nbsp;activeParticles.push(p);<br>
+&nbsp;&nbsp;return p;<br>
+}<br><br>
+function despawnParticle(particle) {<br>
+&nbsp;&nbsp;activeParticles.splice(activeParticles.indexOf(particle), 1);<br>
+&nbsp;&nbsp;particlePool.push(particle);<br>
+}
+</code>
+</div>
+<p><strong>Ganancia:</strong> 0 garbage collection pauses. FPS ultra estable.</p>
+<h3>Dirty Checking</h3>
+<p>Solo renderiza partículas que se movieron significativamente:</p>
+<div class="code-block">
+<code>
+particle.lastX = particle.x;<br>
+particle.lastY = particle.y;<br><br>
+// Más tarde...<br>
+const moved = Math.abs(particle.x - particle.lastX) > 0.5 ||<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Math.abs(particle.y - particle.lastY) > 0.5;<br><br>
+if (moved) {<br>
+&nbsp;&nbsp;renderParticle(particle);<br>
+}
+</code>
+</div>
+<h2>🎨 Efectos Visuales: Trails & Glow</h2>
+<p>Física realista + efectos neon = Neon Lab Physics WOW.</p>
+<h3>Motion Trails</h3>
+<div class="code-block">
+<code>
+// Trail con alpha decay<br>
+ctx.globalAlpha = 0.3; // Persistencia del trail<br>
+ctx.drawImage(canvas, 0, 0); // Copia frame anterior<br>
+ctx.globalAlpha = 1.0; // Full opacity para nuevas partículas
+</code>
+</div>
+<h3>Glow Effect</h3>
+<div class="code-block">
+<code>
+ctx.shadowBlur = 20;<br>
+ctx.shadowColor = particle.color;<br>
+ctx.fillStyle = particle.color;<br>
+ctx.beginPath();<br>
+ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);<br>
+ctx.fill();
+</code>
+</div>
+<h2>📊 Optimización: El Pipeline Completo</h2>
+<p>Nuestro update loop optimizado:</p>
+<div class="code-block">
+<code>
+function gameLoop(timestamp) {<br>
+&nbsp;&nbsp;const deltaTime = (timestamp - lastTime) / 1000;<br>
+&nbsp;&nbsp;lastTime = timestamp;<br><br>
+&nbsp;&nbsp;// 1. Build spatial index<br>
+&nbsp;&nbsp;quadtree = new Quadtree(worldBounds);<br>
+&nbsp;&nbsp;particles.forEach(p => quadtree.insert(p));<br><br>
+&nbsp;&nbsp;// 2. Apply forces<br>
+&nbsp;&nbsp;particles.forEach(p => {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;applyGravity(p, deltaTime);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;applyAirResistance(p);<br>
+&nbsp;&nbsp;});<br><br>
+&nbsp;&nbsp;// 3. Update positions<br>
+&nbsp;&nbsp;particles.forEach(p => p.update(deltaTime));<br><br>
+&nbsp;&nbsp;// 4. Check collisions (usando quadtree)<br>
+&nbsp;&nbsp;particles.forEach(p => {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;const nearby = quadtree.query(p.getBounds());<br>
+&nbsp;&nbsp;&nbsp;&nbsp;nearby.forEach(other => {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (p !== other) checkCollision(p, other);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;});<br>
+&nbsp;&nbsp;});<br><br>
+&nbsp;&nbsp;// 5. Render<br>
+&nbsp;&nbsp;render();<br><br>
+&nbsp;&nbsp;requestAnimationFrame(gameLoop);<br>
+}
+</code>
+</div>
+<h2>🔧 Herramientas & Debugging</h2>
+<p>Desarrollar física realista requiere debugging visual:</p>
+<ul>
+<li><strong>Velocity vectors:</strong> Dibuja flechas mostrando dirección/magnitud</li>
+<li><strong>Collision boxes:</strong> Outlines de bounds para debug</li>
+<li><strong>FPS meter:</strong> Monitor en tiempo real</li>
+<li><strong>Particle count:</strong> Ver cuántas partículas activas</li>
+<li><strong>Physics stats:</strong> Avg collision checks per frame</li>
+</ul>
+<div class="code-block">
+<code>
+// Debug overlay<br>
+ctx.fillStyle = 'white';<br>
+ctx.font = '14px monospace';<br>
+ctx.fillText(`FPS: ${fps}`, 10, 20);<br>
+ctx.fillText(`Particles: ${particles.length}`, 10, 40);<br>
+ctx.fillText(`Collisions: ${collisionChecks}`, 10, 60);
+</code>
+</div>
+<h2>🎓 Lecciones Aprendidas</h2>
+<ol>
+<li><strong>deltaTime es sagrado:</strong> Sin él, física inconsistente cross-device</li>
+<li><strong>Spatial indexing = obligatorio:</strong> A 100+ objetos, performance colapsa sin él</li>
+<li><strong>Floating point errors acumulan:</strong> Usa epsilon (0.0001) para comparaciones</li>
+<li><strong>Restitution < 1.0:</strong> Rebotes perfectos (1.0) causan jitter infinito</li>
+<li><strong>Object pooling > todo:</strong> GC pauses matan smooth physics</li>
+</ol>
+<p style="margin-top:50px;padding-top:30px;border-top:2px solid rgba(0,245,255,.2)"><em>Física realista en JavaScript no es magia, es matemática + optimización. Con las técnicas correctas, puedes simular mundos físicos complejos a 60 FPS sólido. Neon Lab Physics es prueba de que el browser puede competir con engines nativos.</em></p>
+<div class="highlight-box">
+<strong>�� Continúa aprendiendo:</strong>
+<ul style="margin-top:15px">
+<li><a href="/blog/optimizar-juegos-web.html" style="color:#00f5ff">Optimización de Juegos Web</a></li>
+<li><a href="/blog/crear-juegos-html5.html" style="color:#00f5ff">Crear Juegos HTML5</a></li>
+<li><a href="/" style="color:#00f5ff">Juega Neon Lab Physics WOW</a></li>
+</ul>
+</div>
+<a href="/blog/" class="back-to-blog">← Volver al Blog</a>
+</div>
+<script>gtag('event','article_view',{article_title:'Física Juegos Web',article_category:'Técnico'});</script>
+</body>
+</html>
