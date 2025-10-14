@@ -1,0 +1,29 @@
+<!-- Schema.org Structured Data -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "TITLE_PLACEHOLDER",
+    "description": "DESCRIPTION_PLACEHOLDER",
+    "image": "https://lipastudios.com/blog/IMAGE_PLACEHOLDER",
+    "author": {
+        "@type": "Organization",
+        "name": "LIPA Studios",
+        "url": "https://lipastudios.com"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "LIPA Studios",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://lipastudios.com/logo.png"
+        }
+    },
+    "datePublished": "2024-10-13",
+    "dateModified": "2024-10-13",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://lipastudios.com/blog/URL_PLACEHOLDER"
+    }
+}
+</script>
