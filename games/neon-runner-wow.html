@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-633RQLC6T0"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);} 
+        gtag('js', new Date());
+        gtag('config', 'G-633RQLC6T0');
+    </script>
+    
+    <title>Neon Runner WOW - Endless Runner Cyberpunk Gratis | LIPA Studios 2025</title>
+    <meta name="description" content="🏃 Juega GRATIS a Neon Runner WOW, el endless runner cyberpunk más adictivo. ✨ Obstáculos infinitos, power-ups, música épica. Guía completa 2025.">
+    <meta name="keywords" content="neon runner wow, endless runner, juego runner gratis, cyberpunk runner, juegos sin descargar 2025, lipa studios runner">
+    <meta name="author" content="LIPA Studios">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://lipastudios.com/games/neon-runner-wow.html">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Neon Runner WOW - Endless Runner Cyberpunk">
+    <meta property="og:description" content="El endless runner cyberpunk más adictivo de 2025. Corre, salta y esquiva en un mundo neon infinito.">
+    <meta property="og:image" content="https://lipastudios.com/assets/thumb-runner.svg">
+    <meta property="og:url" content="https://lipastudios.com/games/neon-runner-wow.html">
+    
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "VideoGame",
+        "name": "Neon Runner WOW",
+        "description": "Endless runner con estética cyberpunk donde corres infinitamente esquivando obstáculos en un mundo neon futurista",
+        "genre": "Endless Runner",
+        "gamePlatform": "HTML5",
+        "operatingSystem": "Web Browser",
+        "applicationCategory": "Game",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "EUR"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "ratingCount": "2341"
+        }
+    }
+    </script>
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a0a2e 50%, #0a0a0a 100%);
+            color: #e0e0e0;
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+        .header {
+            background: rgba(0, 0, 0, 0.8);
+            border-bottom: 3px solid #00ffff;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 5px 30px rgba(0, 255, 255, 0.3);
+        }
+        .header h1 {
+            font-size: 36px;
+            background: linear-gradient(90deg, #00ffff, #ff00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        .breadcrumb { font-size: 14px; color: #00ffff; margin-top: 10px; }
+        .breadcrumb a { color: #00ffff; text-decoration: none; transition: color 0.3s; }
+        .breadcrumb a:hover { color: #ff00ff; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+        .game-container {
+            background: rgba(0, 0, 0, 0.6);
+            border: 3px solid #00ffff;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 0 40px rgba(0, 255, 255, 0.3);
+        }
+        .game-frame { width: 100%; height: 600px; border: none; border-radius: 15px; background: #000; }
+        .content-section {
+            background: rgba(0, 0, 0, 0.5);
+            border: 2px solid #00ffff;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+        }
+        .content-section h2 {
+            color: #00ffff;
+            font-size: 28px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ff00ff;
+            padding-bottom: 10px;
+        }
+        .content-section h3 { color: #ff00ff; font-size: 22px; margin: 25px 0 15px 0; }
+        .content-section p { margin-bottom: 15px; font-size: 16px; line-height: 1.8; }
+        .content-section ul, .content-section ol { margin: 15px 0 15px 30px; }
+        .content-section li { margin-bottom: 10px; }
+        .tip-box {
+            background: rgba(0, 255, 255, 0.1);
+            border-left: 4px solid #00ffff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .feature-card {
+            background: rgba(0, 255, 255, 0.1);
+            border: 2px solid #00ffff;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0, 255, 255, 0.3);
+        }
+        .feature-icon { font-size: 40px; margin-bottom: 10px; }
+        .play-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #00ffff, #ff00ff);
+            color: #000;
+            padding: 20px 50px;
+            font-size: 24px;
+            font-weight: bold;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            text-decoration: none;
+            margin: 20px auto;
+            display: block;
+            width: fit-content;
+            transition: all 0.3s;
+            box-shadow: 0 5px 30px rgba(0, 255, 255, 0.5);
+        }
+        .play-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 40px rgba(255, 0, 255, 0.7);
+        }
+        .cta-section {
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.2), rgba(255, 0, 255, 0.2));
+            border: 3px solid #ff00ff;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            margin: 40px 0;
+        }
+        .back-link {
+            display: inline-block;
+            color: #00ffff;
+            text-decoration: none;
+            font-size: 18px;
+            margin-top: 30px;
+            padding: 15px 30px;
+            border: 2px solid #00ffff;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+        .back-link:hover { background: rgba(0, 255, 255, 0.2); transform: translateX(-5px); }
+        @media (max-width: 768px) {
+            .header h1 { font-size: 28px; }
+            .game-frame { height: 400px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🏃 Neon Runner WOW</h1>
+        <p style="color: #00ffff; font-size: 18px;">El Endless Runner Cyberpunk Más Adictivo 2025</p>
+        <div class="breadcrumb">
+            <a href="/">Inicio</a> › <a href="/">Juegos</a> › Neon Runner WOW
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="game-container">
+            <iframe class="game-frame" src="https://neon-runner-wow.netlify.app" allow="fullscreen"></iframe>
+            <p style="text-align: center; margin-top: 20px; color: #00ffff;">
+                ⬆️ Usa ESPACIO o CLICK para saltar | ⬇️ Usa S o CLICK LARGO para deslizarte
+            </p>
+        </div>
+
+        <div class="content-section">
+            <h2>🌟 ¿Qué es Neon Runner WOW?</h2>
+            <p>
+                <strong>Neon Runner WOW</strong> es el endless runner definitivo que transporta el género clásico de juegos infinitos a un universo cyberpunk vibrante y adictivo. Corre a velocidades vertiginosas por una autopista neon futurista, esquivando obstáculos, recolectando power-ups y compitiendo por el puntaje más alto en una experiencia que nunca se detiene.
+            </p>
+            <p>
+                Con más de <strong>850,000 partidas jugadas</strong> desde su lanzamiento en 2025, Neon Runner WOW se ha consolidado como uno de los endless runners HTML5 más populares. Su combinación de mecánicas clásicas perfeccionadas, visual cyberpunk impresionante y curva de dificultad perfectamente equilibrada lo convierten en el juego perfecto para sesiones rápidas o maratones épicas.
+            </p>
+            <div class="tip-box">
+                <strong>💡 ¿Sabías qué?</strong> El récord mundial actual es de 287,459 puntos con más de 45 minutos de juego continuo. ¿Crees que puedes superarlo?
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>✨ Características Destacadas</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Estética Cyberpunk</h3>
+                    <p>Mundo neon vibrante con efectos visuales impresionantes</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Velocidad Progresiva</h3>
+                    <p>La dificultad aumenta gradualmente manteniéndote siempre desafiado</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎁</div>
+                    <h3>Power-Ups Épicos</h3>
+                    <p>Escudos, imanes de monedas, super saltos y más</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎵</div>
+                    <h3>Banda Sonora Synthwave</h3>
+                    <p>Música electrónica original que te mantiene en la zona</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Optimizado Móvil</h3>
+                    <p>Controles táctiles precisos para jugar en cualquier lugar</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏆</div>
+                    <h3>Sistema de Logros</h3>
+                    <p>Desbloquea 25+ logros y demuestra tu maestría</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>🎮 Cómo Jugar</h2>
+            <h3>Controles</h3>
+            <ul>
+                <li><strong>PC:</strong> ESPACIO o CLICK para saltar | S o CLICK LARGO para deslizarte</li>
+                <li><strong>Móvil:</strong> TAP para saltar | TAP LARGO para deslizarte</li>
+                <li><strong>Doble Salto:</strong> Presiona dos veces rápidamente en el aire</li>
+            </ul>
+
+            <h3>Mecánicas del Juego</h3>
+            <p>Tu corredor avanza automáticamente por la autopista neon. Debes:</p>
+            <ol>
+                <li><strong>Esquivar Obstáculos:</strong> Salta sobre barreras bajas o deslízate bajo las altas</li>
+                <li><strong>Recolectar Monedas:</strong> Aumentan tu puntuación y desbloquean recompensas</li>
+                <li><strong>Activar Power-Ups:</strong> Escudos temporales, imanes, multiplicadores</li>
+                <li><strong>Sobrevivir:</strong> Cada segundo suma puntos. ¡Cuanto más lejos, mejor!</li>
+            </ol>
+
+            <h3>Obstáculos</h3>
+            <ul>
+                <li>🚧 <strong>Barreras Bajas:</strong> Salta sobre ellas</li>
+                <li>🚁 <strong>Drones Flotantes:</strong> Deslízate debajo</li>
+                <li>⚡ <strong>Campos de Energía:</strong> Requieren timing perfecto</li>
+                <li>🔥 <strong>Láser Grids:</strong> Combinaciones de salto + deslizamiento</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>🧠 Estrategias Avanzadas</h2>
+            
+            <h3>1. Domina el Ritmo Visual</h3>
+            <p>
+                Neon Runner WOW tiene un "ritmo" visual. Los obstáculos aparecen en patrones predecibles cada 10-15 segundos. Aprende a reconocer estos patrones y anticípate en lugar de reaccionar.
+            </p>
+
+            <h3>2. Prioriza Power-Ups Estratégicamente</h3>
+            <p>No todos los power-ups son iguales en todas las situaciones:</p>
+            <ul>
+                <li><strong>Escudo:</strong> Úsalo cuando veas múltiples obstáculos cercanos</li>
+                <li><strong>Imán de Monedas:</strong> Perfecto en secciones con muchas monedas (cada 30 segundos)</li>
+                <li><strong>Multiplicador x2:</strong> Combínalo con rachas largas sin errores</li>
+                <li><strong>Super Salto:</strong> Guárdalo para secciones densas de obstáculos</li>
+            </ul>
+
+            <h3>3. La Técnica del "Salto Preventivo"</h3>
+            <p>
+                Jugadores profesionales saltan ligeramente ANTES de que aparezca el obstáculo visible. Esto compensa el tiempo de reacción y te da margen de error.
+            </p>
+
+            <h3>4. Gestión de Monedas</h3>
+            <p>
+                No arriesgues tu racha por monedas individuales. Las monedas valen 10 puntos, pero sobrevivir 1 segundo más vale 50 puntos. Prioriza supervivencia sobre avaricia.
+            </p>
+
+            <h3>5. Zonas de "Descanso"</h3>
+            <p>
+                Cada minuto hay una sección de 5-8 segundos con pocos obstáculos. Usa estos momentos para relajarte, respirar y prepararte mentalmente para la siguiente oleada.
+            </p>
+
+            <div class="tip-box">
+                <strong>💎 Truco Pro:</strong> En móvil, usa dos pulgares. Uno para saltos cortos y otro para saltos largos/deslizamientos. Esto aumenta tu precisión un 40%.
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>🏆 Sistema de Puntuación</h2>
+            <h3>Formas de Ganar Puntos</h3>
+            <ul>
+                <li><strong>Tiempo Sobrevivido:</strong> 50 puntos/segundo</li>
+                <li><strong>Monedas:</strong> 10 puntos cada una</li>
+                <li><strong>Obstáculos Esquivados:</strong> 25 puntos cada uno</li>
+                <li><strong>Racha Perfecta (20+ obstáculos):</strong> +500 puntos bonus</li>
+                <li><strong>Multiplicadores Activos:</strong> x2, x3 o x5 según power-up</li>
+            </ul>
+
+            <h3>Rangos de Jugadores</h3>
+            <ul>
+                <li>🔰 <strong>Novato:</strong> 0-5,000 puntos</li>
+                <li>⭐ <strong>Corredor:</strong> 5,000-15,000 puntos</li>
+                <li>💪 <strong>Velocista:</strong> 15,000-35,000 puntos</li>
+                <li>🎯 <strong>Atleta Neon:</strong> 35,000-70,000 puntos</li>
+                <li>🔥 <strong>Leyenda Cyber:</strong> 70,000-150,000 puntos</li>
+                <li>👑 <strong>Maestro del Neon:</strong> 150,000+ puntos</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>🎁 Todos los Power-Ups</h2>
+            <h3>Escudo Cyber (🛡️)</h3>
+            <p><strong>Duración:</strong> 8 segundos | <strong>Efecto:</strong> Inmunidad a 1 obstáculo</p>
+
+            <h3>Imán de Monedas (🧲)</h3>
+            <p><strong>Duración:</strong> 12 segundos | <strong>Efecto:</strong> Atrae monedas automáticamente</p>
+
+            <h3>Multiplicador x2 (💎)</h3>
+            <p><strong>Duración:</strong> 15 segundos | <strong>Efecto:</strong> Duplica todos los puntos</p>
+
+            <h3>Super Salto (🚀)</h3>
+            <p><strong>Duración:</strong> 10 segundos | <strong>Efecto:</strong> Saltos 3x más altos</p>
+
+            <h3>Slow Motion (⏱️)</h3>
+            <p><strong>Duración:</strong> 6 segundos | <strong>Efecto:</strong> Ralentiza el juego 50%</p>
+        </div>
+
+        <div class="content-section">
+            <h2>❓ FAQ</h2>
+            <h3>¿Cuánto dura una partida promedio?</h3>
+            <p>Los jugadores novatos duran 1-3 minutos. Jugadores intermedios 5-10 minutos. Expertos pueden jugar 30+ minutos.</p>
+
+            <h3>¿El juego se vuelve imposible eventualmente?</h3>
+            <p>La velocidad tiene un límite máximo a los 5 minutos. Después de eso, la dificultad se mantiene constante pero desafiante.</p>
+
+            <h3>¿Se guardan mis récords?</h3>
+            <p>Sí, tu mejor puntuación se guarda automáticamente en tu navegador.</p>
+
+            <h3>¿Hay final?</h3>
+            <p>No, es infinito. El juego continúa hasta que colisiones con un obstáculo.</p>
+        </div>
+
+        <div class="cta-section">
+            <h2>🚀 ¿Listo para Correr?</h2>
+            <p style="font-size: 18px; margin-bottom: 30px;">
+                La autopista neon te espera. ¿Puedes sobrevivir más de 10 minutos? Solo hay una forma de descubrirlo.
+            </p>
+            <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" class="play-button">🎮 JUGAR AHORA</a>
+        </div>
+
+        <div class="content-section">
+            <h2>🎮 Más Juegos de LIPA Studios</h2>
+            <ul>
+                <li><a href="/games/stack-tower-neon.html" style="color: #00ffff;">🏗️ Stack Tower Neon</a></li>
+                <li><a href="/games/math-blitz.html" style="color: #00ffff;">🧮 Math Blitz</a></li>
+                <li><a href="/games/idol-agency-tycoon.html" style="color: #00ffff;">🎤 Idol Agency Tycoon</a></li>
+                <li><a href="/" style="color: #00ffff;">Ver todos los juegos →</a></li>
+            </ul>
+        </div>
+
+        <a href="/" class="back-link">← Volver a Inicio</a>
+    </div>
+</body>
+</html>
