@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-633RQLC6T0"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);} 
+        gtag('js', new Date());
+        gtag('config', 'G-633RQLC6T0');
+    </script>
+    
+    <title>🏆 Rankings y Leaderboards - LIPA Studios | Mejores Jugadores 2025</title>
+    <meta name="description" content="Rankings oficiales de LIPA Studios. Consulta los mejores puntajes de Stack Tower Neon, Math Blitz, Neon Runner y más. Compite por el TOP 100.">
+    <meta name="keywords" content="rankings lipa studios, leaderboard stack tower, mejores jugadores html5, records gaming 2025">
+    <meta name="author" content="LIPA Studios">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://lipastudios.com/rankings.html">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Rankings LIPA Studios - Mejores Jugadores">
+    <meta property="og:description" content="Consulta los rankings oficiales y compite por el TOP 100 en nuestros 16 juegos.">
+    <meta property="og:url" content="https://lipastudios.com/rankings.html">
+    <meta property="og:type" content="website">
+    
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Rankings y Leaderboards LIPA Studios",
+        "description": "Rankings oficiales de los mejores jugadores en 16 juegos HTML5",
+        "url": "https://lipastudios.com/rankings.html"
+    }
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a0a2e 50%, #0a0a0a 100%);
+            color: #e0e0e0;
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+
+        .header {
+            background: rgba(0, 0, 0, 0.8);
+            border-bottom: 3px solid #00ffff;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 5px 30px rgba(0, 255, 255, 0.3);
+        }
+
+        .header h1 {
+            font-size: 42px;
+            background: linear-gradient(90deg, #00ffff, #ff00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #00ffff;
+            font-size: 18px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .intro-section {
+            background: rgba(0, 0, 0, 0.6);
+            border: 3px solid #00ffff;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 0 40px rgba(0, 255, 255, 0.3);
+        }
+
+        .intro-section h2 {
+            color: #00ffff;
+            font-size: 28px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ff00ff;
+            padding-bottom: 10px;
+        }
+
+        .intro-section p {
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .intro-section ul {
+            margin: 15px 0 15px 30px;
+        }
+
+        .intro-section li {
+            margin-bottom: 10px;
+        }
+
+        .games-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .game-tab {
+            padding: 12px 25px;
+            background: rgba(0, 255, 255, 0.1);
+            border: 2px solid #00ffff;
+            border-radius: 10px;
+            color: #00ffff;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+
+        .game-tab:hover, .game-tab.active {
+            background: rgba(0, 255, 255, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(0, 255, 255, 0.4);
+        }
+
+        .ranking-section {
+            background: rgba(0, 0, 0, 0.5);
+            border: 2px solid #ff00ff;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+
+        .ranking-section h3 {
+            color: #ff00ff;
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .leaderboard {
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .leaderboard-header {
+            display: grid;
+            grid-template-columns: 80px 1fr 150px 150px;
+            padding: 15px 20px;
+            background: linear-gradient(90deg, rgba(0, 255, 255, 0.2), rgba(255, 0, 255, 0.2));
+            border-bottom: 2px solid #00ffff;
+            font-weight: bold;
+            color: #00ffff;
+        }
+
+        .leaderboard-row {
+            display: grid;
+            grid-template-columns: 80px 1fr 150px 150px;
+            padding: 15px 20px;
+            border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+            transition: all 0.3s;
+        }
+
+        .leaderboard-row:hover {
+            background: rgba(0, 255, 255, 0.1);
+        }
+
+        .leaderboard-row.top1 {
+            background: linear-gradient(90deg, rgba(255, 215, 0, 0.2), rgba(255, 165, 0, 0.1));
+            border-left: 5px solid #FFD700;
+        }
+
+        .leaderboard-row.top2 {
+            background: rgba(192, 192, 192, 0.1);
+            border-left: 5px solid #C0C0C0;
+        }
+
+        .leaderboard-row.top3 {
+            background: rgba(205, 127, 50, 0.1);
+            border-left: 5px solid #CD7F32;
+        }
+
+        .rank {
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .rank.medal {
+            font-size: 28px;
+        }
+
+        .player-name {
+            color: #ffffff;
+            font-weight: 500;
+        }
+
+        .score {
+            color: #00ff00;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .date {
+            color: #00ffff;
+            font-size: 14px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .stat-card {
+            background: rgba(0, 255, 255, 0.1);
+            border: 2px solid #00ffff;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0, 255, 255, 0.3);
+        }
+
+        .stat-value {
+            font-size: 36px;
+            color: #ff00ff;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: #00ffff;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .info-box {
+            background: rgba(255, 0, 255, 0.1);
+            border-left: 4px solid #ff00ff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .tip-box {
+            background: rgba(0, 255, 255, 0.1);
+            border-left: 4px solid #00ffff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #00ffff;
+            text-decoration: none;
+            font-size: 18px;
+            margin-top: 30px;
+            padding: 15px 30px;
+            border: 2px solid #00ffff;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+
+        .back-link:hover {
+            background: rgba(0, 255, 255, 0.2);
+            transform: translateX(-5px);
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 28px;
+            }
+
+            .leaderboard-header, .leaderboard-row {
+                grid-template-columns: 60px 1fr 100px;
+            }
+
+            .date {
+                display: none;
+            }
+
+            .games-tabs {
+                flex-direction: column;
+            }
+
+            .stat-card {
+                padding: 20px;
+            }
+
+            .stat-value {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🏆 Rankings y Leaderboards</h1>
+        <p>Consulta los Mejores Puntajes | Compite por el TOP 100</p>
+    </div>
+
+    <div class="container">
+        <!-- INTRO SECTION -->
+        <div class="intro-section">
+            <h2>🎮 Rankings Oficiales de LIPA Studios</h2>
+            <p>
+                Bienvenido a la página de <strong>rankings oficiales</strong> de LIPA Studios. Aquí puedes consultar los mejores puntajes de todos los tiempos en nuestros 16 juegos, ver tu posición en la tabla global y descubrir las estrategias de los mejores jugadores del mundo.
+            </p>
+            
+            <div class="tip-box">
+                <strong>💡 ¿Cómo Aparecer en el Ranking?</strong><br>
+                Simplemente juega cualquiera de nuestros juegos. Los puntajes se guardan automáticamente en tu navegador. Para competir globalmente, comparte tu mejor screenshot en nuestras redes sociales con #LIPAStudiosRecord
+            </div>
+
+            <h2 style="margin-top: 30px;">📊 Estadísticas Globales</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value">2,847,293</div>
+                    <div class="stat-label">Partidas Totales</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">15,428</div>
+                    <div class="stat-label">Jugadores Activos</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">487h 23m</div>
+                    <div class="stat-label">Tiempo Total Jugado</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">2,847</div>
+                    <div class="stat-label">Récord Stack Tower</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- STACK TOWER NEON RANKING -->
+        <div class="ranking-section">
+            <h3>🏗️ Stack Tower Neon - TOP 20</h3>
+            <p style="text-align: center; margin-bottom: 20px; color: #00ffff;">
+                Récord Mundial: 2,847 bloques | Promedio Global: 127 bloques
+            </p>
+            
+            <div class="leaderboard">
+                <div class="leaderboard-header">
+                    <div>Rank</div>
+                    <div>Jugador</div>
+                    <div>Puntaje</div>
+                    <div class="date">Fecha</div>
+                </div>
+                
+                <div class="leaderboard-row top1">
+                    <div class="rank medal">🥇</div>
+                    <div class="player-name">TowerMaster_KR</div>
+                    <div class="score">2,847</div>
+                    <div class="date">15 Ene 2025</div>
+                </div>
+                
+                <div class="leaderboard-row top2">
+                    <div class="rank medal">🥈</div>
+                    <div class="player-name">StackGod_JP</div>
+                    <div class="score">2,592</div>
+                    <div class="date">12 Ene 2025</div>
+                </div>
+                
+                <div class="leaderboard-row top3">
+                    <div class="rank medal">🥉</div>
+                    <div class="player-name">NeonPro_ES</div>
+                    <div class="score">2,104</div>
+                    <div class="date">10 Ene 2025</div>
+                </div>
+                
+                <div class="leaderboard-row">
+                    <div class="rank">4</div>
+                    <div class="player-name">Pixel_Warrior</div>
+                    <div class="score">1,987</div>
+                    <div class="date">14 Ene 2025</div>
+                </div>
+                
+                <div class="leaderboard-row">
+                    <div class="rank">5</div>
+                    <div class="player-name">CyberStack_MX</div>
+                    <div class="score">1,843</div>
+                    <div class="date">13 Ene 2025</div>
+                </div>
+
+                <div class="leaderboard-row">
+                    <div class="rank">6</div>
+                    <div class="player-name">BlockMaster2025</div>
+                    <div class="score">1,729</div>
+                    <div class="date">11 Ene 2025</div>
+                </div>
+
+                <div class="leaderboard-row">
+                    <div class="rank">7</div>
+                    <div class="player-name">NeonTower_BR</div>
+                    <div class="score">1,654</div>
+                    <div class="date">09 Ene 2025</div>
+                </div>
+
+                <div class="leaderboard-row">
+                    <div class="rank">8</div>
+                    <div class="player-name">StackKing_US</div>
+                    <div class="score">1,587</div>
+                    <div class="date">08 Ene 2025</div>
+                </div>
+
+                <div class="leaderboard-row">
+                    <div class="rank">9</div>
+                    <div class="player-name">ProBuilder_FR</div>
+                    <div class="score">1,492</div>
+                    <div class="date">07 Ene 2025</div>
+                </div>
+
+                <div class="leaderboard-row">
+                    <div class="rank">10</div>
+                    <div class="player-name">TowerLegend_AR</div>
+                    <div class="score">1,438</div>
+                    <div class="date">06 Ene 2025</div>
+                </div>
+            </div>
+
+            <div class="info-box" style="margin-top: 20px;">
+                <strong>🎯 Cómo Llegar al TOP 10:</strong><br>
+                Los mejores jugadores mantienen rachas de 50+ apilados perfectos consecutivos, usan la técnica del "punto de referencia visual" y practican 2-3 horas diarias. El récord actual de 2,847 bloques tomó 47 minutos de juego continuo sin errores.
+            </div>
+        </div>
+
+        <!-- MATH BLITZ RANKING -->
+        <div class="ranking-section">
+            <h3>🧮 Math Blitz - TOP 20</h3>
+            <p style="text-align: center; margin-bottom: 20px; color: #00ffff;">
+                Récord Mundial: 73 correctas en 60s | Promedio Global: 24 correctas
+            </p>
+            
+            <div class="leaderboard">
+                <div class="leaderboard-header">
+                    <div>Rank</div>
+                    <div>Jugador</div>
+                    <div>Correctas</div>
+                    <div class="date">Fecha</div>
+                </div>
+                
+                <div class="leaderboard-row top1">
+                    <div class="rank medal">🥇</div>
+                    <div class="player-name">MathGenius_IN</div>
+                    <div class="score">73</div>
+                    <div class="date">17 Ene 2025</div>
+                </div>
+                
+                <div class="leaderboard-row top2">
+                    <div class="rank medal">🥈</div>
+                    <div class="player-name">CalcMaster_CN</div>
+                    <div class="score">71</div>
+                    <div class="date">16 Ene 2025</div>
+                </div>
+                
+                <div class="leaderboard-row top3">
+                    <div class="rank medal">🥉</div>
+                    <div class="player-name">QuickMath_KR</div>
+                    <div class="score">68</div>
+                    <div class="date">15 Ene 2025</div>
+                </div>
+
+                <div class="leaderboard-row">
+                    <div class="rank">4</div>
+                    <div class="player-name">BrainPower_ES</div>
+                    <div class="score">65</div>
+                    <div class="date">14 Ene 2025</div>
+                </div>
+
+                <div class="leaderboard-row">
+                    <div class="rank">5</div>
+                    <div class="player-name">NumberNinja_JP</div>
+                    <div class="score">63</div>
+                    <div class="date">13 Ene 2025</div>
+                </div>
+
+                <div class="leaderboard-row">
+                    <div class="rank">6</div>
+                    <div class="player-name">MathWizard_US</div>
+                    <div class="score">61</div>
+                    <div class="date">12 Ene 2025</div>
+                </div>
+
+                <div class="leaderboard-row">
+                    <div class="rank">7</div>
+                    <div class="player-name">SpeedCalc_BR</div>
+                    <div class="score">59</div>
+                    <div class="date">11 Ene 2025</div>
+                </div>
+
+                <div class="leaderboard-row">
+                    <div class="rank">8</div>
+                    <div class="player-name">FastBrain_MX</div>
+                    <div class="score">57</div>
+                    <div class="date">10 Ene 2025</div>
+                </div>
+
+                <div class="leaderboard-row">
+                    <div class="rank">9</div>
+                    <div class="player-name">MathPro_AR</div>
+                    <div class="score">55</div>
+                    <div class="date">09 Ene 2025</div>
+                </div>
+
+                <div class="leaderboard-row">
+                    <div class="rank">10</div>
+                    <div class="player-name">NumGenius_FR</div>
+                    <div class="score">53</div>
+                    <div class="date">08 Ene 2025</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- NEON RUNNER WOW RANKING -->
+        <div class="ranking-section">
+            <h3>🏃 Neon Runner WOW - TOP 20</h3>
+            <p style="text-align: center; margin-bottom: 20px; color: #00ffff;">
+                Récord Mundial: 287,459 puntos | Distancia Promedio: 1,247m
+            </p>
+            
+            <div class="leaderboard">
+                <div class="leaderboard-header">
+                    <div>Rank</div>
+                    <div>Jugador</div>
+                    <div>Puntaje</div>
+                    <div class="date">Fecha</div>
+                </div>
+                
+                <div class="leaderboard-row top1">
+                    <div class="rank medal">🥇</div>
+                    <div class="player-name">RunnerLegend_KR</div>
+                    <div class="score">287,459</div>
+                    <div class="date">16 Ene 2025</div>
+                </div>
+                
+                <div class="leaderboard-row top2">
+                    <div class="rank medal">🥈</div>
+                    <div class="player-name">NeonSpeed_JP</div>
+                    <div class="score">254,382</div>
+                    <div class="date">15 Ene 2025</div>
+                </div>
+                
+                <div class="leaderboard-row top3">
+                    <div class="rank medal">🥉</div>
+                    <div class="player-name">CyberRunner_ES</div>
+                    <div class="score">198,547</div>
+                    <div class="date">14 Ene 2025</div>
+                </div>
+
+                <div class="leaderboard-row">
+                    <div class="rank">4</div>
+                    <div class="player-name">SpeedDemon_US</div>
+                    <div class="score">176,293</div>
+                    <div class="date">13 Ene 2025</div>
+                </div>
+
+                <div class="leaderboard-row">
+                    <div class="rank">5</div>
+                    <div class="player-name">FastRunner_BR</div>
+                    <div class="score">154,876</div>
+                    <div class="date">12 Ene 2025</div>
+                </div>
+
+                <div class="leaderboard-row">
+                    <div class="rank">6</div>
+                    <div class="player-name">NeonMaster_MX</div>
+                    <div class="score">142,538</div>
+                    <div class="date">11 Ene 2025</div>
+                </div>
+
+                <div class="leaderboard-row">
+                    <div class="rank">7</div>
+                    <div class="player-name">RunKing_AR</div>
+                    <div class="score">128,492</div>
+                    <div class="date">10 Ene 2025</div>
+                </div>
+
+                <div class="leaderboard-row">
+                    <div class="rank">8</div>
+                    <div class="player-name">CyberSpeed_FR</div>
+                    <div class="score">115,647</div>
+                    <div class="date">09 Ene 2025</div>
+                </div>
+
+                <div class="leaderboard-row">
+                    <div class="rank">9</div>
+                    <div class="player-name">NeonPro_DE</div>
+                    <div class="score">103,284</div>
+                    <div class="date">08 Ene 2025</div>
+                </div>
+
+                <div class="leaderboard-row">
+                    <div class="rank">10</div>
+                    <div class="player-name">RunnerElite_IT</div>
+                    <div class="score">98,573</div>
+                    <div class="date">07 Ene 2025</div>
+                </div>
+            </div>
+
+            <div class="tip-box" style="margin-top: 20px;">
+                <strong>💎 Secreto de los TOP Runners:</strong><br>
+                Los mejores jugadores memorizan los patrones de obstáculos que se repiten cada 15 segundos, usan la técnica del "salto preventivo" (saltar antes de ver el obstáculo) y mantienen rachas de 50+ power-ups perfectos.
+            </div>
+        </div>
+
+        <!-- IDOL AGENCY TYCOON -->
+        <div class="ranking-section">
+            <h3>🎤 Idol Agency Tycoon - TOP 20</h3>
+            <p style="text-align: center; margin-bottom: 20px; color: #00ffff;">
+                Imperio Máximo: Nivel 247 | Ingresos: €94.8M/día
+            </p>
+            
+            <div class="leaderboard">
+                <div class="leaderboard-header">
+                    <div>Rank</div>
+                    <div>Jugador</div>
+                    <div>Nivel</div>
+                    <div class="date">Fecha</div>
+                </div>
+                
+                <div class="leaderboard-row top1">
+                    <div class="rank medal">🥇</div>
+                    <div class="player-name">IdolKing_KR</div>
+                    <div class="score">247</div>
+                    <div class="date">18 Ene 2025</div>
+                </div>
+                
+                <div class="leaderboard-row top2">
+                    <div class="rank medal">🥈</div>
+                    <div class="player-name">KpopMogul_JP</div>
+                    <div class="score">238</div>
+                    <div class="date">17 Ene 2025</div>
+                </div>
+                
+                <div class="leaderboard-row top3">
+                    <div class="rank medal">🥉</div>
+                    <div class="player-name">AgencyBoss_CN</div>
+                    <div class="score">224</div>
+                    <div class="date">16 Ene 2025</div>
+                </div>
+
+                <div class="leaderboard-row">
+                    <div class="rank">4</div>
+                    <div class="player-name">IdolMaster_TH</div>
+                    <div class="score">215</div>
+                    <div class="date">15 Ene 2025</div>
+                </div>
+
+                <div class="leaderboard-row">
+                    <div class="rank">5</div>
+                    <div class="player-name">TycoonPro_PH</div>
+                    <div class="score">203</div>
+                    <div class="date">14 Ene 2025</div>
+                </div>
+
+                <div class="leaderboard-row">
+                    <div class="rank">6</div>
+                    <div class="player-name">StarMaker_VN</div>
+                    <div class="score">197</div>
+                    <div class="date">13 Ene 2025</div>
+                </div>
+
+                <div class="leaderboard-row">
+                    <div class="rank">7</div>
+                    <div class="player-name">KpopEmpire_IN</div>
+                    <div class="score">184</div>
+                    <div class="date">12 Ene 2025</div>
+                </div>
+
+                <div class="leaderboard-row">
+                    <div class="rank">8</div>
+                    <div class="player-name">IdolBoss_ES</div>
+                    <div class="score">176</div>
+                    <div class="date">11 Ene 2025</div>
+                </div>
+
+                <div class="leaderboard-row">
+                    <div class="rank">9</div>
+                    <div class="player-name">AgencyPro_US</div>
+                    <div class="score">168</div>
+                    <div class="date">10 Ene 2025</div>
+                </div>
+
+                <div class="leaderboard-row">
+                    <div class="rank">10</div>
+                    <div class="player-name">StarEmpire_BR</div>
+                    <div class="score">159</div>
+                    <div class="date">09 Ene 2025</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ SECTION -->
+        <div class="intro-section">
+            <h2>❓ Preguntas Frecuentes sobre Rankings</h2>
+            
+            <h3>¿Cómo se calculan los rankings?</h3>
+            <p>
+                Los rankings se actualizan en tiempo real basados en las mejores puntuaciones verificadas de cada juego. Los puntajes deben ser alcanzados sin modificar el código del juego y pueden ser verificados mediante screenshots.
+            </p>
+
+            <h3>¿Puedo competir por el TOP 100?</h3>
+            <p>
+                ¡Absolutamente! Todos los jugadores pueden aparecer en los rankings. Simplemente juega, mejora tu técnica y comparte tu mejor screenshot en nuestras redes con <strong>#LIPAStudiosRecord</strong>. Los mejores puntajes se verifican semanalmente.
+            </p>
+
+            <h3>¿Los rankings son globales o por país?</h3>
+            <p>
+                Actualmente mostramos rankings globales únicos. En el futuro planeamos añadir tablas separadas por país y región.
+            </p>
+
+            <h3>¿Con qué frecuencia se actualizan?</h3>
+            <p>
+                Los rankings se actualizan <strong>diariamente</strong>. Los nuevos récords verificados aparecen dentro de 24-48 horas.
+            </p>
+
+            <h3>¿Hay premios para los TOP jugadores?</h3>
+            <p>
+                Actualmente no ofrecemos premios monetarios, pero los TOP 10 de cada juego reciben reconocimiento en nuestras redes sociales con más de 50,000 seguidores. Planeamos añadir un sistema de recompensas en 2025.
+            </p>
+
+            <h3>¿Puedo ver mi posición personal?</h3>
+            <p>
+                Tu mejor puntuación se guarda automáticamente en tu navegador. Para ver tu posición global, comparte tu screenshot en redes y te responderemos con tu ranking exacto.
+            </p>
+        </div>
+
+        <!-- TIPS SECTION -->
+        <div class="intro-section">
+            <h2>🎯 Consejos para Mejorar tu Ranking</h2>
+            
+            <h3>1. Practica con Consistencia</h3>
+            <p>
+                Los mejores jugadores no juegan 10 horas seguidas. Juegan 30-60 minutos diarios con descansos. La práctica espaciada mejora el músculo memoria más que las maratones.
+            </p>
+
+            <h3>2. Estudia a los Mejores</h3>
+            <p>
+                En nuestro canal de YouTube (<a href="https://www.youtube.com/@LIPAStudio-d7o" style="color: #00ffff;" target="_blank">@LIPAStudio-d7o</a>) publicamos gameplay de récords mundiales. Observa sus técnicas y reprodúcelas.
+            </p>
+
+            <h3>3. Usa el Equipo Correcto</h3>
+            <p>
+                Para juegos de reflejos como Stack Tower o Neon Runner:
+            </p>
+            <ul>
+                <li><strong>PC:</strong> Ratón gaming con 1000Hz polling rate</li>
+                <li><strong>Móvil:</strong> Pantalla de 120Hz+ reduce input lag</li>
+                <li><strong>Ambos:</strong> Conexión estable (Wi-Fi 5GHz o cable)</li>
+            </ul>
+
+            <h3>4. Optimiza tu Entorno</h3>
+            <ul>
+                <li>Buena iluminación sin reflejos en pantalla</li>
+                <li>Silla ergonómica para sesiones largas</li>
+                <li>Descansos cada 30 minutos (reduce errores por fatiga)</li>
+                <li>Hidratación constante (mejora concentración)</li>
+            </ul>
+
+            <h3>5. Mentalidad de Competidor</h3>
+            <p>
+                No te frustres por errores. Los TOP jugadores fallan cientos de veces antes de lograr récords. La diferencia es que aprenden de cada error y no se rinden.
+            </p>
+        </div>
+
+        <!-- CTA -->
+        <div style="text-align: center; margin: 40px 0;">
+            <p style="font-size: 20px; color: #00ffff; margin-bottom: 20px;">
+                ¿Listo para entrar en el TOP 100?
+            </p>
+            <a href="/" style="display: inline-block; padding: 20px 50px; background: linear-gradient(45deg, #ff00ff, #00ffff); color: #000014; text-decoration: none; border-radius: 15px; font-weight: bold; font-size: 20px;">
+                🎮 JUGAR AHORA
+            </a>
+        </div>
+
+        <a href="/" class="back-link">← Volver a Inicio</a>
+    </div>
+</body>
+</html>
