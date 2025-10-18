@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Sistema de Compartir - LIPA Studios</title>
+    <script src="/share-system.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a0a2e 50%, #0a0a0a 100%);
+            color: #e0e0e0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .demo-container {
+            max-width: 600px;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            border: 3px solid #00ffff;
+            border-radius: 20px;
+            padding: 40px;
+        }
+        h1 {
+            color: #00ffff;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 32px;
+        }
+        .subtitle {
+            color: #ff00ff;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .game-simulation {
+            background: rgba(0, 255, 255, 0.1);
+            border: 2px solid #00ffff;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .game-simulation h2 {
+            color: #00ffff;
+            margin-bottom: 20px;
+        }
+        .score-display {
+            font-size: 48px;
+            color: #00ff00;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .btn {
+            background: linear-gradient(45deg, #ff00ff, #00ffff);
+            color: #000;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            width: 100%;
+            margin: 10px 0;
+            transition: transform 0.2s;
+        }
+        .btn:hover {
+            transform: scale(1.05);
+        }
+        .btn-secondary {
+            background: rgba(0, 255, 255, 0.2);
+            border: 2px solid #00ffff;
+            color: #00ffff;
+        }
+        .info-box {
+            background: rgba(255, 215, 0, 0.1);
+            border: 2px solid #ffd700;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .info-box h3 {
+            color: #ffd700;
+            margin-bottom: 10px;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .stat-card {
+            background: rgba(0, 0, 0, 0.5);
+            border: 2px solid #ff00ff;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+        }
+        .stat-value {
+            font-size: 32px;
+            color: #ff00ff;
+            font-weight: bold;
+        }
+        .stat-label {
+            color: #00ffff;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <h1>🎁 Sistema de Compartir</h1>
+        <p class="subtitle">Demo Interactiva - LIPA Studios</p>
+
+        <div class="game-simulation">
+            <h2>🏗️ Stack Tower Neon</h2>
+            <p style="color: #aaa; margin-bottom: 20px;">Simulación de partida terminada</p>
+            
+            <div class="score-display" id="demo-score">0</div>
+            
+            <button class="btn" onclick="simulateGameEnd()">
+                🎮 Simular Partida Terminada
+            </button>
+        </div>
+
+        <div class="info-box">
+            <h3>💎 Tus Recompensas Actuales</h3>
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-value" id="current-points">0</div>
+                    <div class="stat-label">Puntos</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="share-count">0</div>
+                    <div class="stat-label">Shares</div>
+                </div>
+            </div>
+        </div>
+
+        <button class="btn btn-secondary" onclick="testNotifications()">
+            🔔 Probar Notificaciones
+        </button>
+
+        <button class="btn btn-secondary" onclick="showInfo()">
+            ℹ️ Ver Información del Sistema
+        </button>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="/" style="color: #00ffff; text-decoration: none;">← Volver a Inicio</a>
+        </div>
+    </div>
+
+    <script>
+        // Actualizar displays
+        function updateDisplays() {
+            document.getElementById('current-points').textContent = LIPAShare.getRewardPoints();
+            document.getElementById('share-count').textContent = LIPAShare.getShareCount();
+        }
+
+        // Simular final de partida
+        function simulateGameEnd() {
+            // Generar puntaje aleatorio
+            const score = Math.floor(Math.random() * 3000) + 500;
+            document.getElementById('demo-score').textContent = score;
+
+            // Determinar logro
+            let achievement;
+            if (score > 2000) achievement = '👑 Leyenda del Apilado';
+            else if (score > 1500) achievement = '💎 Maestro Constructor';
+            else if (score > 1000) achievement = '⭐ Experto';
+            else achievement = '🎯 Gran Jugador';
+
+            // Mostrar modal de compartir después de 500ms
+            setTimeout(() => {
+                LIPAShare.showShareModal({
+                    gameName: 'Stack Tower Neon',
+                    score: score,
+                    achievement: achievement,
+                    emoji: '🏗️',
+                    customMessage: `¡Apilé ${score} bloques sin fallar!`
+                });
+
+                // Actualizar displays después de cerrar modal
+                setTimeout(updateDisplays, 1000);
+            }, 500);
+        }
+
+        // Probar notificaciones
+        function testNotifications() {
+            LIPAShare.showNotification('✅ ¡Notificación de éxito!', 'success');
+            setTimeout(() => {
+                LIPAShare.showNotification('⚠️ Notificación de error', 'error');
+            }, 1000);
+            setTimeout(() => {
+                LIPAShare.showNotification('💡 Notificación informativa', 'info');
+            }, 2000);
+            setTimeout(() => {
+                LIPAShare.showNotification('🎁 ¡+50 puntos de recompensa!', 'reward');
+            }, 3000);
+        }
+
+        // Mostrar información
+        function showInfo() {
+            const info = `
+📊 ESTADÍSTICAS DEL SISTEMA:
+
+💎 Puntos Totales: ${LIPAShare.getRewardPoints()}
+🔄 Veces Compartido: ${LIPAShare.getShareCount()}
+🎁 Recompensa por Share: ${LIPAShare.config.rewardPoints} pts
+⏱️ Cooldown: ${LIPAShare.config.cooldownMinutes} min
+
+🌐 PLATAFORMAS DISPONIBLES:
+• Twitter/X
+• Facebook
+• WhatsApp
+• Telegram
+• Copiar al Portapapeles
+• Compartir Nativo (móvil)
+
+✨ CARACTERÍSTICAS:
+• Modal visual atractivo
+• Notificaciones animadas
+• Sistema de cooldown
+• Analytics integrado
+• 100% responsive
+
+🎯 USO PROYECTADO:
+• 10-25% de jugadores comparten
+• +600 a 2,250 visitas/mes orgánicas
+• Viralidad exponencial
+            `;
+            
+            alert(info);
+        }
+
+        // Inicializar
+        updateDisplays();
+
+        // Actualizar cada 5 segundos por si cambian
+        setInterval(updateDisplays, 5000);
+    </script>
+</body>
+</html>
