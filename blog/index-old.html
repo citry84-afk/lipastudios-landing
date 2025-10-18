@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog de Desarrollo de Juegos HTML5 | LIPA Studios</title>
+    <meta name="description" content="Artículos sobre desarrollo de juegos HTML5, estética cyberpunk, K-pop gaming, estrategias y tutoriales completos de nuestros juegos neon.">
+    <meta name="keywords" content="desarrollo juegos html5, tutoriales gaming, estética cyberpunk, juegos k-pop, estrategias juegos casuales">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-633RQLC6T0"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);} 
+        gtag('js', new Date());
+        gtag('config', 'G-633RQLC6T0');
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a0a2e 50%, #0a0a0a 100%);
+            color: #e0e0e0;
+            line-height: 1.8;
+        }
+
+        .header-nav {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid #00f5ff;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+            background: linear-gradient(45deg, #00f5ff, #ff00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: #00f5ff;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .nav-links a:hover {
+            text-shadow: 0 0 10px #00f5ff;
+        }
+
+        .hero-blog {
+            text-align: center;
+            padding: 80px 20px;
+            background: radial-gradient(circle at center, rgba(0, 245, 255, 0.1), transparent);
+        }
+
+        .hero-title {
+            font-size: 3.5em;
+            background: linear-gradient(45deg, #00f5ff, #ff00ff, #00f5ff);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shine 3s linear infinite;
+            margin-bottom: 20px;
+        }
+
+        @keyframes shine {
+            to { background-position: 200% center; }
+        }
+
+        .hero-subtitle {
+            font-size: 1.3em;
+            color: #888;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .article-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 2px solid rgba(0, 245, 255, 0.3);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .article-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 245, 255, 0.3);
+            border-color: #00f5ff;
+        }
+
+        .article-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #00f5ff, #ff00ff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4em;
+        }
+
+        .article-content {
+            padding: 30px;
+        }
+
+        .article-category {
+            color: #ff00ff;
+            font-size: 0.9em;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .article-title {
+            font-size: 1.8em;
+            color: #00f5ff;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .article-excerpt {
+            color: #aaa;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .read-more {
+            background: linear-gradient(45deg, #00f5ff, #ff00ff);
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .read-more:hover {
+            box-shadow: 0 0 20px rgba(0, 245, 255, 0.5);
+            transform: scale(1.05);
+        }
+
+        .back-home {
+            display: inline-block;
+            background: rgba(0, 245, 255, 0.1);
+            color: #00f5ff;
+            padding: 15px 30px;
+            border-radius: 10px;
+            text-decoration: none;
+            border: 2px solid #00f5ff;
+            transition: all 0.3s;
+            margin-bottom: 40px;
+        }
+
+        .back-home:hover {
+            background: rgba(0, 245, 255, 0.2);
+            box-shadow: 0 0 20px rgba(0, 245, 255, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5em;
+            }
+            
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="header-nav">
+        <div class="nav-container">
+            <div class="logo">LIPA STUDIOS</div>
+            <div class="nav-links">
+                <a href="/">Inicio</a>
+                <a href="/blog/">Blog</a>
+                <a href="/about.html">Nosotros</a>
+                <a href="/contact.html">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-blog">
+        <h1 class="hero-title">📚 Blog de Gaming & Desarrollo</h1>
+        <p class="hero-subtitle">Tutoriales, estrategias, desarrollo de juegos HTML5 y la cultura cyberpunk en videojuegos</p>
+    </section>
+
+    <div class="container">
+        <a href="/" class="back-home">← Volver a Juegos</a>
+
+        <div class="articles-grid">
+            <!-- Artículo MEGA-VIRAL - Lista Definitiva -->
+            <div class="article-card" onclick="window.location.href='/blog/100-mejores-juegos-html5-gratis-2025.html'" style="border: 3px solid #ffd700; background: linear-gradient(135deg, rgba(255,215,0,0.1), rgba(255,165,0,0.1));">
+                <div class="article-image">🎮🏆</div>
+                <div class="article-content">
+                    <div class="article-category" style="color: #ffd700; font-weight: bold;">⭐ LISTA DEFINITIVA</div>
+                    <h2 class="article-title">Los 100 Mejores Juegos HTML5 Gratis 2025</h2>
+                    <p class="article-excerpt">La lista MÁS COMPLETA de juegos HTML5 gratis en 2025. 10 categorías: Arcade, Puzzle, Strategy, Racing, RPG, Shooter. Top 10 imprescindibles + 90 juegos más. ¡Juega ahora sin descargar nada!</p>
+                    <div class="article-meta">
+                        <span>📅 13 Oct 2024</span>
+                        <span>⏱️ 25 min lectura</span>
+                        <span style="color: #ffd700; font-weight: bold;">🔥 MEGA-VIRAL</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Artículo VIRAL #1 - Amazon Afiliados -->
+            <div class="article-card" onclick="window.location.href='/blog/setup-gaming-aesthetic-2025.html'">
+                <div class="article-image">🎮✨</div>
+                <div class="article-content">
+                    <div class="article-category" style="color: #ff9900;">Amazon Afiliados VIRAL</div>
+                    <h2 class="article-title">Setup Gaming Aesthetic 2025: 3 Presupuestos Completos (200€-1000€)</h2>
+                    <p class="article-excerpt">La guía definitiva para crear tu setup gaming aesthetic perfecto. 3 presupuestos completos con 20+ productos Amazon: Budget, Mid-Range y Premium. Monitor 4K, luces RGB, periféricos wireless.</p>
+                    <div class="article-meta">
+                        <span>📅 13 Oct 2024</span>
+                        <span>⏱️ 15 min lectura</span>
+                        <span style="color: #ff9900; font-weight: bold;">🔥 VIRAL</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Artículo VIRAL #2 - Amazon Afiliados -->
+            <div class="article-card" onclick="window.location.href='/blog/fire-tv-stick-gaming-2025.html'">
+                <div class="article-image">📺🎮</div>
+                <div class="article-content">
+                    <div class="article-category" style="color: #ff9900;">Amazon Afiliados VIRAL</div>
+                    <h2 class="article-title">Fire TV Stick Gaming 2025: Convierte tu TV en Consola Arcade HTML5</h2>
+                    <p class="article-excerpt">Transforma tu Fire TV Stick en una consola gaming completa. Juega HTML5, retro, cloud gaming en 4K. Setup completo por 140€ con 7 productos Amazon. Xbox Game Pass, Luna, emuladores.</p>
+                    <div class="article-meta">
+                        <span>📅 13 Oct 2024</span>
+                        <span>⏱️ 12 min lectura</span>
+                        <span style="color: #ff9900; font-weight: bold;">🔥 VIRAL</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Artículo VIRAL #3 - Amazon Afiliados -->
+            <div class="article-card" onclick="window.location.href='/blog/accesorios-gaming-virales-tiktok-2025.html'">
+                <div class="article-image">📱✨</div>
+                <div class="article-content">
+                    <div class="article-category" style="color: #ff9900;">Amazon Afiliados VIRAL</div>
+                    <h2 class="article-title">12 Accesorios Gaming Virales TikTok 2025 Que TRANSFORMAN Tu Setup</h2>
+                    <p class="article-excerpt">Los gadgets gaming más trending de TikTok. 12 accesorios económicos (<50€) con 50M+ views: RGB, organización, aesthetic. Todos disponibles en Amazon.</p>
+                    <div class="article-meta">
+                        <span>📅 13 Oct 2024</span>
+                        <span>⏱️ 10 min lectura</span>
+                        <span style="color: #ff9900; font-weight: bold;">🔥 VIRAL</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Artículo VIRAL #4 - Amazon Afiliados + Salud -->
+            <div class="article-card" onclick="window.location.href='/blog/gaming-salud-gadgets-2025.html'">
+                <div class="article-image">💚🎮</div>
+                <div class="article-content">
+                    <div class="article-category" style="color: #39ff14;">Amazon Afiliados + Salud</div>
+                    <h2 class="article-title">Gaming + Salud 2025: 10 Gadgets que Cuidan tu Cuerpo Mientras Juegas</h2>
+                    <p class="article-excerpt">Juega 8+ horas sin dolor. 10 gadgets wellness: smartwatch gaming, gafas luz azul, ergonomía, hidratación. Setup saludable 385€. Cross-sell EntrenoApp.</p>
+                    <div class="article-meta">
+                        <span>📅 13 Oct 2024</span>
+                        <span>⏱️ 12 min lectura</span>
+                        <span style="color: #39ff14; font-weight: bold;">💪 SALUD</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Artículo VIRAL #5 - Amazon Afiliados -->
+            <div class="article-card" onclick="window.location.href='/blog/mejores-moviles-gaming-economicos-2025.html'">
+                <div class="article-image">📱💎</div>
+                <div class="article-content">
+                    <div class="article-category" style="color: #ff9900;">Amazon Afiliados VIRAL</div>
+                    <h2 class="article-title">Los 7 Mejores Móviles Gaming Económicos 2025 (180€-320€)</h2>
+                    <p class="article-excerpt">Smartphones gaming desde 180€. Xiaomi, Realme, Samsung, OnePlus. Comparativa completa con benchmarks, specs, y precios reales. Juega AAA sin gastar 1000€.</p>
+                    <div class="article-meta">
+                        <span>📅 13 Oct 2024</span>
+                        <span>⏱️ 14 min lectura</span>
+                        <span style="color: #ff9900; font-weight: bold;">🔥 VIRAL</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Artículo Amazon Afiliados -->
+            <div class="article-card" onclick="window.location.href='/blog/mejores-sillas-gaming-2025.html'">
+                <div class="article-image">🪑</div>
+                <div class="article-content">
+                    <div class="article-category" style="color: #ff9900;">Amazon Afiliados</div>
+                    <h2 class="article-title">Las 7 Mejores Sillas Gaming 2025 | Comparativa y Guía</h2>
+                    <p class="article-excerpt">Descubre las mejores sillas gaming de 2025 para jugar durante horas sin dolor. Comparativa detallada, precios y guía de compra completa. Desde 119€ hasta 399€.</p>
+                    <div class="article-meta">
+                        <span>📅 13 Oct 2024</span>
+                        <span>⏱️ 10 min lectura</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Artículo Cross-Promotion -->
+            <div class="article-card" onclick="window.location.href='/blog/juegos-entrenar-reflejos.html'">
+                <div class="article-image">🎮💪</div>
+                <div class="article-content">
+                    <div class="article-category" style="color: #39ff14;">Cross-Promotion</div>
+                    <h2 class="article-title">Los 5 Mejores Juegos para Entrenar Reflejos y Coordinación</h2>
+                    <p class="article-excerpt">Descubre cómo mejorar tus reflejos y coordinación jugando. Análisis de los 5 mejores juegos HTML5 para gamers y atletas. + Conexión con entrenamiento físico real.</p>
+                    <div class="article-meta">
+                        <span>📅 13 Oct 2024</span>
+                        <span>⏱️ 6 min lectura</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Artículo 1 -->
+            <div class="article-card" onclick="window.location.href='/blog/crear-juegos-html5.html'">
+                <div class="article-image">🎮</div>
+                <div class="article-content">
+                    <div class="article-category">Desarrollo</div>
+                    <h2 class="article-title">Cómo Crear Juegos HTML5 Sin Programar</h2>
+                    <p class="article-excerpt">Descubre las herramientas y frameworks que te permitirán crear juegos web profesionales sin escribir una sola línea de código. Guía completa 2024.</p>
+                    <div class="article-meta">
+                        <span>📅 13 Oct 2024</span>
+                        <span>⏱️ 8 min lectura</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Artículo 2 -->
+            <div class="article-card" onclick="window.location.href='estrategias-stack-tower.html'">
+                <div class="article-image">🏗️</div>
+                <div class="article-content">
+                    <div class="article-category">Estrategia</div>
+                    <h2 class="article-title">10 Estrategias Pro para Dominar Stack Tower</h2>
+                    <p class="article-excerpt">Técnicas avanzadas, secretos de timing perfecto y métodos para alcanzar puntuaciones de 1000+ en Stack Tower Neon. De principiante a maestro.</p>
+                    <div class="article-meta">
+                        <span>📅 12 Oct 2024</span>
+                        <span>⏱️ 7 min lectura</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Artículo 3 -->
+            <div class="article-card" onclick="window.location.href='historia-idol-tycoon.html'">
+                <div class="article-image">🎤</div>
+                <div class="article-content">
+                    <div class="article-category">Historia</div>
+                    <h2 class="article-title">La Historia Detrás de Idol Agency Tycoon</h2>
+                    <p class="article-excerpt">Del concepto a la realidad: cómo creamos el mejor juego K-pop de gestión. Inspiraciones, desafíos técnicos y el futuro del juego.</p>
+                    <div class="article-meta">
+                        <span>📅 11 Oct 2024</span>
+                        <span>⏱️ 10 min lectura</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Artículo 4 -->
+            <div class="article-card" onclick="window.location.href='guia-neon-runner.html'">
+                <div class="article-image">🏃</div>
+                <div class="article-content">
+                    <div class="article-category">Guía</div>
+                    <h2 class="article-title">Guía Definitiva de Neon Runner WOW</h2>
+                    <p class="article-excerpt">Todo sobre power-ups, dash system, combos y cómo lograr 60+ FPS consistentes. La guía más completa del endless runner más fluido.</p>
+                    <div class="article-meta">
+                        <span>📅 10 Oct 2024</span>
+                        <span>⏱️ 9 min lectura</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Artículo 5 -->
+            <div class="article-card" onclick="window.location.href='estetica-cyberpunk.html'">
+                <div class="article-image">🌆</div>
+                <div class="article-content">
+                    <div class="article-category">Diseño</div>
+                    <h2 class="article-title">Estética Cyberpunk en Videojuegos: Guía Visual</h2>
+                    <p class="article-excerpt">Análisis profundo del diseño neon, paletas de color, tipografías y efectos visuales que definen el cyberpunk en gaming moderno.</p>
+                    <div class="article-meta">
+                        <span>📅 9 Oct 2024</span>
+                        <span>⏱️ 11 min lectura</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Artículo 6 -->
+            <div class="article-card" onclick="window.location.href='optimizar-juegos-web.html'">
+                <div class="article-image">⚡</div>
+                <div class="article-content">
+                    <div class="article-category">Performance</div>
+                    <h2 class="article-title">Cómo Optimizar Juegos Web para Móviles</h2>
+                    <p class="article-excerpt">Técnicas avanzadas de optimización: lazy loading, canvas rendering, touch events y cómo lograr 60 FPS en cualquier dispositivo.</p>
+                    <div class="article-meta">
+                        <span>📅 8 Oct 2024</span>
+                        <span>⏱️ 10 min lectura</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Artículo 7 -->
+            <div class="article-card" onclick="window.location.href='kpop-videojuegos.html'">
+                <div class="article-image">💜</div>
+                <div class="article-content">
+                    <div class="article-category">Cultura</div>
+                    <h2 class="article-title">El Fenómeno K-pop en los Videojuegos</h2>
+                    <p class="article-excerpt">Cómo la música coreana conquistó el gaming: análisis de juegos K-pop, mecánicas de ritmo y el impacto cultural en la industria.</p>
+                    <div class="article-meta">
+                        <span>📅 7 Oct 2024</span>
+                        <span>⏱️ 9 min lectura</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Artículo 8 -->
+            <div class="article-card" onclick="window.location.href='trucos-neon-beat.html'">
+                <div class="article-image">🎵</div>
+                <div class="article-content">
+                    <div class="article-category">Tips & Trucos</div>
+                    <h2 class="article-title">5 Trucos Secretos para Dominar Neon Beat WOW</h2>
+                    <p class="article-excerpt">Timing perfecto, técnicas de combo infinito, configuración óptima y secretos que solo los top players conocen. ¡Alcanza el rango S!</p>
+                    <div class="article-meta">
+                        <span>📅 6 Oct 2024</span>
+                        <span>⏱️ 6 min lectura</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Artículo 9 -->
+            <div class="article-card" onclick="window.location.href='historia-juegos-casuales.html'">
+                <div class="article-image">🕹️</div>
+                <div class="article-content">
+                    <div class="article-category">Historia</div>
+                    <h2 class="article-title">Historia de Juegos Casuales: De Flash a HTML5</h2>
+                    <p class="article-excerpt">La evolución del gaming casual web: desde los pioneros en Flash hasta la revolución HTML5. Un viaje por 20 años de innovación.</p>
+                    <div class="article-meta">
+                        <span>📅 5 Oct 2024</span>
+                        <span>⏱️ 12 min lectura</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Artículo 10 -->
+            <div class="article-card" onclick="window.location.href='fisica-juegos-web.html'">
+                <div class="article-image">🔬</div>
+                <div class="article-content">
+                    <div class="article-category">Técnico</div>
+                    <h2 class="article-title">Física Realista en Juegos Web: Caso Neon Lab</h2>
+                    <p class="article-excerpt">Cómo implementamos física ultra realista con JavaScript: colisiones, gravedad, rebotes y partículas. Detrás de escenas de Neon Lab Physics WOW.</p>
+                    <div class="article-meta">
+                        <span>📅 4 Oct 2024</span>
+                        <span>⏱️ 11 min lectura</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        gtag('event', 'page_view', {
+            page_title: 'Blog Index',
+            page_location: window.location.href
+        });
+    </script>
+</body>
+</html>
+
