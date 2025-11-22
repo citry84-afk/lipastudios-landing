@@ -215,6 +215,74 @@
         .related-links a:hover {
             text-decoration: underline;
         }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: rgba(0, 255, 255, 0.05);
+            border: 2px solid #00ffff;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        th {
+            background: rgba(255, 0, 255, 0.3);
+            color: #fff;
+            padding: 1rem;
+            text-align: left;
+            font-weight: bold;
+            border-bottom: 2px solid #ff00ff;
+        }
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+        }
+        tr:hover {
+            background: rgba(255, 0, 255, 0.1);
+        }
+        .pros-cons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .pros, .cons {
+            padding: 1.5rem;
+            border-radius: 10px;
+        }
+        .pros {
+            background: rgba(0, 255, 0, 0.1);
+            border: 2px solid #00ff00;
+        }
+        .cons {
+            background: rgba(255, 0, 0, 0.1);
+            border: 2px solid #ff0000;
+        }
+        .pros h4 {
+            color: #00ff00;
+            margin-top: 0;
+        }
+        .cons h4 {
+            color: #ff0000;
+            margin-top: 0;
+        }
+        .faq-item {
+            background: rgba(255, 255, 0, 0.1);
+            border-left: 4px solid #ffff00;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+        }
+        .faq-item h4 {
+            color: #ffff00;
+            margin-top: 0;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(255, 0, 255, 0.2), rgba(0, 255, 255, 0.2));
+            border: 2px solid #ff00ff;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
         footer {
             margin-top: 4rem;
             padding-top: 2rem;
@@ -231,6 +299,15 @@
             }
             .container {
                 padding: 1rem;
+            }
+            .pros-cons {
+                grid-template-columns: 1fr;
+            }
+            table {
+                font-size: 0.9rem;
+            }
+            th, td {
+                padding: 0.5rem;
             }
         }
     </style>
@@ -397,16 +474,104 @@
         <h3>3. MediaMarkt</h3>
         <p><strong>Ventajas:</strong> Tienda física y online, ofertas combinadas, financiación</p>
         
-        <h2>💡 Consejos para Montar un Setup Gaming Barato</h2>
+        <h2>📊 Tabla Comparativa: Setup Gaming Básico vs Intermedio</h2>
         
-        <ol>
-            <li><strong>Prioriza lo esencial:</strong> Monitor, teclado, ratón y auriculares son lo más importante</li>
-            <li><strong>Compra en Black Friday:</strong> Ahorra hasta un 40% en productos gaming</li>
-            <li><strong>Considera productos reacondicionados:</strong> Pueden ser más baratos y de buena calidad</li>
-            <li><strong>Busca combos:</strong> Algunas tiendas ofrecen packs con descuento</li>
-            <li><strong>No compres todo de una vez:</strong> Puedes ir mejorando el setup gradualmente</li>
-            <li><strong>Lee reseñas:</strong> Asegúrate de que los productos son de calidad</li>
-        </ol>
+        <table>
+            <thead>
+                <tr>
+                    <th>Componente</th>
+                    <th>Setup Básico (300€)</th>
+                    <th>Setup Intermedio (500€)</th>
+                    <th>Diferencia</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Monitor</strong></td>
+                    <td>24" 75Hz (100€)</td>
+                    <td>27" 144Hz (180€)</td>
+                    <td>+80€, mejor experiencia visual</td>
+                </tr>
+                <tr>
+                    <td><strong>Teclado</strong></td>
+                    <td>Básico membrana (40€)</td>
+                    <td>Mecánico RGB (80€)</td>
+                    <td>+40€, mejor calidad y durabilidad</td>
+                </tr>
+                <tr>
+                    <td><strong>Ratón</strong></td>
+                    <td>Básico (30€)</td>
+                    <td>Profesional (60€)</td>
+                    <td>+30€, mejor precisión</td>
+                </tr>
+                <tr>
+                    <td><strong>Auriculares</strong></td>
+                    <td>Básicos (50€)</td>
+                    <td>Con micrófono 7.1 (90€)</td>
+                    <td>+40€, mejor sonido y comunicación</td>
+                </tr>
+                <tr>
+                    <td><strong>Silla</strong></td>
+                    <td>Básica (80€)</td>
+                    <td>Ergonómica (150€)</td>
+                    <td>+70€, mejor comodidad</td>
+                </tr>
+                <tr>
+                    <td><strong>Total</strong></td>
+                    <td>300€</td>
+                    <td>560€</td>
+                    <td>+260€, setup completo premium</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h2>💡 Consejos Expertos para Montar un Setup Gaming Barato</h2>
+        
+        <div class="highlight-box">
+            <h3>🎯 Estrategia de Compra Inteligente</h3>
+            <ol>
+                <li><strong>Prioriza lo esencial:</strong> Monitor, teclado, ratón y auriculares son lo más importante. Puedes comprar accesorios después.</li>
+                <li><strong>Compra en Black Friday:</strong> Ahorra hasta un 40% en productos gaming. Es la mejor época del año.</li>
+                <li><strong>Considera productos reacondicionados:</strong> Pueden ser 20-30% más baratos y de buena calidad. Verifica garantía.</li>
+                <li><strong>Busca combos y packs:</strong> Algunas tiendas ofrecen packs teclado+ratón+auriculares con descuento adicional.</li>
+                <li><strong>No compres todo de una vez:</strong> Puedes empezar con lo esencial y ir mejorando el setup gradualmente.</li>
+                <li><strong>Lee reseñas detalladas:</strong> Asegúrate de que los productos son de calidad. YouTube tiene excelentes reviews.</li>
+                <li><strong>Compara precios:</strong> Usa comparadores como Idealo para encontrar el mejor precio.</li>
+                <li><strong>Considera marcas menos conocidas:</strong> Marcas como Redragon ofrecen buena calidad a precios más bajos.</li>
+            </ol>
+        </div>
+        
+        <h2>❓ Preguntas Frecuentes (FAQ) sobre Setup Gaming Barato</h2>
+        
+        <div class="faq-item">
+            <h4>¿Puedo montar un setup gaming decente por menos de 300€?</h4>
+            <p><strong>Sí, es posible</strong> si compras en Black Friday y priorizas lo esencial. Un setup básico con monitor 24" 75Hz, teclado gaming básico, ratón gaming y auriculares puede costar alrededor de 250€-300€ en Black Friday.</p>
+        </div>
+        
+        <div class="faq-item">
+            <h4>¿Qué es más importante: monitor o teclado mecánico?</h4>
+            <p>Para gaming, el <strong>monitor es más importante</strong>. Un monitor 144Hz mejora más la experiencia que un teclado mecánico. Si tienes que elegir, prioriza un buen monitor y deja el teclado mecánico para después.</p>
+        </div>
+        
+        <div class="faq-item">
+            <h4>¿Vale la pena comprar productos reacondicionados?</h4>
+            <p><strong>Sí, si tienen garantía</strong>. Los productos reacondicionados pueden ser 20-30% más baratos y suelen estar en buen estado. Asegúrate de comprarlos en tiendas confiables con garantía.</p>
+        </div>
+        
+        <div class="faq-item">
+            <h4>¿Puedo mejorar mi setup gradualmente?</h4>
+            <p><strong>Absolutamente</strong>. Es la mejor estrategia. Empieza con lo esencial (monitor, teclado, ratón, auriculares) y luego ve mejorando: silla gaming, luces LED, webcam, etc.</p>
+        </div>
+        
+        <div class="faq-item">
+            <h4>¿Qué marcas ofrecen mejor relación calidad-precio?</h4>
+            <p>Para presupuestos ajustados: <strong>Redragon</strong> (teclados y ratones), <strong>AOC</strong> (monitores), <strong>HyperX</strong> (auriculares), <strong>Trust</strong> (sillas básicas). Ofrecen buena calidad a precios accesibles.</p>
+        </div>
+        
+        <div class="faq-item">
+            <h4>¿Necesito una silla gaming o puedo usar una silla normal?</h4>
+            <p>Puedes usar una silla normal, pero una <strong>silla gaming básica (60€-80€)</strong> ofrece mejor soporte lumbar y comodidad para sesiones largas. Si pasas muchas horas sentado, vale la pena la inversión.</p>
+        </div>
         
         <h2>🎮 Setup Gaming para Juegos HTML5</h2>
         <p>Si principalmente vas a jugar <strong>juegos HTML5</strong> como los de <a href="/" style="color: #00ffff;">LIPA Studios</a>, no necesitas el setup más potente. Un setup básico de 300€ es suficiente:</p>
